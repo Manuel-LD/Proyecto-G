@@ -1,0 +1,63 @@
+
+/* Ejercicio 1: Números Pares e Impares
+*Instrucciones: Escribe un programa que solicite al usuario un número y determine si es par o impar.*/
+let number = prompt("escribe un número");
+if (number % 2 == 0){
+    console.log ("es un número par");
+} else{
+    console.log("es un número impar");
+}
+
+/*    *Ejercicio 2: Calcular la Suma de Números del 1 al N
+*Instrucciones: Escribe un programa que solicite al usuario un número N y calcule la suma de todos los números del 1 al N.*/
+/*let numberN =prompt("escribe un número");
+let sum = 0;
+if (numberN <= N){
+    console.log
+}*/
+
+
+
+/*    *Ejercicio 3: Tabla de Multiplicar
+*Instrucciones: Escribe un programa que solicite al usuario un número y muestre su tabla de multiplicar del 1 al 10.*/
+let number3 = prompt("escribe el número del que quieras la tabla de multiplicar");
+console.log ("esta es su tabla de multiplicar:")
+console.log (number3*1);
+console.log (number3*2);
+console.log (number3*3);
+console.log (number3*4);
+console.log (number3*5);
+console.log (number3*6);
+console.log (number3*7);
+console.log (number3*8);
+console.log (number3*9);
+console.log (number3*10);
+
+ /*   *Ejercicio 4: Calificaciones
+*Instrucciones: Escribe un programa que solicite al usuario una calificación (un número entre 0 y 100) y muestre la letra correspondiente según la siguiente escala:
+*90-100: A
+*80-89: B
+*70-79: C
+*60-69: D
+*0-59: F */
+let number4 = prompt("dame un número entre el 0 y 100");
+switch (number4) {
+    case (90 <= number4 <= 100):
+        console.log("A");
+        break;
+    case (80 <= number4 <= 89):
+        console.log("A");
+        break;      
+    case (70 <= number4 <= 79):
+        console.log("A");
+        break;  
+    case (60 <= number4 <=69):
+            console.log("A");
+            break;
+   case (0 <= number4 <= 59):
+        console.log("A");
+        break;
+    default:
+        console.log("ese número no se encuentra en el rango");
+        break;
+}
