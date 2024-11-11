@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: white;
+}
+
+.contenedor {
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 100vh;
+}
+
+/*Titulo*/
+.contenedor-titulo {
+    width: 45%;
+    padding: 20px;
+}
+.contenedor-titulo h1{
+    font-size: 50px;
+    color: white;
+}
+.contenedor-titulo p{
+    color: white;
+}
+
+/*Contenodr iconos*/
+
+.contenedor-icons{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-icons i{
+    color: white;
+    margin: 5px;
+}
+/*Formulario*/
+.contenedor-forms {
+    color: white;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.nombre-apellido {
+    display: flex;
+    gap: 15px;
+}
+.email-telefono {
+    display: flex;
+    gap: 15px;
+}
+.campo {
+    flex: 1;
+}
+.contenedor-forms label {
+    font-size: 14px;
+}
+.contenedor-forms input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
+.contenedor-forms textarea{
+    background-color: transparent;
+    height: 200px;
+}
+
+
+/*Terminos y condiciones*/
+.terminos {
+    display: flex;                   
+    justify-content: left;         
+    align-items: center;           
+    gap: 10px;                     
+}
+.terminos input {
+    width: 20px;                   
+    height: 20px; 
+    margin: 0px;                   
+}
+.terminos label {
+    font-size: 14px;               
+    color: white;                 
+}
+
+/*Boton de enviar*/
+.contenedor-forms button{
+    background-color: red;
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+/*Fotter*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+}
+
+.logo-fotter{
+    display: flex;
+    width:30%;
+}
+.logo-fotter img{
+    display: flex;
+    margin-left: 100px;
+    padding: 10px;
+}
+
+/*Barra de navegacion fotter*/
+.contenedor-fotter-nav{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-fotter-nav a{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+
+.contenedor-fotter-pie{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+.contenedor-fotter-pie a{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    opacity: 50%;
+}
+
+#linea{
+    border: none;              
+    border-top: 2px solid black; 
+    margin: 20px;             
+}
+
+.contenedor-fotter-pie-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.contenedor-fotter-pie-icons i{
+    margin: 5px;
+}
