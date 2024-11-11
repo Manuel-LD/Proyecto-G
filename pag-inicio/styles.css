@@ -1,36 +1,75 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 0;
     align-items: center;
 }
 
-.boton-comprar{
+.boton{
     padding: 8px 30px;
+    border-radius: 20px;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.boton:hover{
+    cursor: pointer;
+}
+.boton-comprar{
     background-color: #b11b1b;
     color: white;
     border: 1px solid black;
-    border-radius: 20px;
-    margin-left: 16px;
-    margin-bottom: 8px;
-    text-align: center;
 }
 
 .boton-unirse {
-    padding: 8px 30px;
     background-color: white;
     color: black;
     border: 1px solid #b11b1b;
-    border-radius: 20px;
-    margin-left: 16px;
-    margin-bottom: 8px;
-    text-align: center;
 }
 
-img{
+.img-navbar{
     height: 40px;
 }
 
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
     background-color: rgba(white, var(--bs-bg-opacity)) !important;
+}
+
+.img-header{
+    width: 100%;
+    min-width: 300px;
+    height: 90vh;
+}
+
+button{
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+.inf-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inf-h3{
+    padding: 80px 80px;
+}
+
+.inf-p-btn{
+    padding: 80px 80px;
+}
+
+h3{
+    font-size: 64px;
+}
+
+p{
+    font-size: 24px;
 }
