@@ -1,0 +1,141 @@
+/*Variables para colores*/
+:root{
+    --red-color:#b11b1b;
+    --black-color: #000000;
+    --white-color:#ffffff;
+}
+
+/*Estilos generales*/
+*{
+    font-family: "Roboto", sans-serif;
+}
+
+.title-p{
+    padding-top: 30px;
+}
+
+.title-h2{
+    padding-top: 30px;
+    font-size: 36px;
+}
+
+/*Primer contenedor configuración de usuario*/
+.container-form{
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 16px;
+}
+
+.container-form-div{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.container-form-inf{
+    margin:36px;
+}
+
+/*Estilos de btn*/
+.btn{
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border-color:var(--black-color);
+    font-size: 16px;
+
+}
+
+.btn:hover{
+    background-color: var(--red-color);
+    color: var(--black-color);
+    border-color:var(--black-color);   
+}
+
+.btn:active{
+    background-color: var(--red-color) !important ;
+}
+
+.container-btn{
+    padding-right: 150px;
+}
+
+/*Contenedor de historial */
+.container-img{
+    width: 200px;
+    height: 200px;
+}
+
+.container-img-history{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 30px;
+}
+
+.container-p-history{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/*Media Queries*/
+
+@media only screen and (max-width: 600px){
+    .container-form{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .container-form-div{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .container-btn{
+        padding-right: 50px;
+    }
+
+    
+    .container-img-history{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-p-history{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+@media (min-width: 601px) and (max-width: 1190px) {
+    .container-form{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .container-form-div{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .container-btn{
+        padding-right: 50px;
+    }
+
+
+    .container-img-history{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-p-history{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
