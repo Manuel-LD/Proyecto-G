@@ -2,6 +2,8 @@
     color :#ffffff;
     background-color: #b11b1b;
     padding: 35px;
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+    font-family: 'Roboto', sans-serif; 
 }
 
 #mision{
@@ -11,6 +13,7 @@
     padding-right: 500px;
     padding-bottom: 35px;
     padding-top: 25px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 #vision{
@@ -19,6 +22,7 @@
     padding-left: 500px;
     padding-right: 25px;
     padding-bottom: 35px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 #valores{
@@ -27,14 +31,17 @@
     padding-left: 25px;
     padding-right: 500px;
     padding-bottom: 65px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 h1 {
     font-size: 48px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 p {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 #fotos {
@@ -59,14 +66,17 @@ p {
 
 body {
     background-color: #b11b1b;
+    font-family: 'Roboto', sans-serif; 
 }
 
 .name {
     margin-bottom: -5px;
+    font-family: 'Roboto', sans-serif; 
 }
 
 .trabajo {
     color: #b11b1b;
+    font-family: 'Roboto', sans-serif; 
 }
 
 #team {
@@ -74,6 +84,7 @@ body {
     background-color: #000000;
     text-align: center;
     /*padding-top: 50px;*/
+    font-family: 'Roboto', sans-serif; 
 }
 
 #more {
@@ -81,6 +92,7 @@ body {
     background-color: #000000;
     padding: 60px;
     text-align: center;
+    font-family: 'Roboto', sans-serif; 
 }
 
 /* Extra small devices (phones, 600px and down) */
