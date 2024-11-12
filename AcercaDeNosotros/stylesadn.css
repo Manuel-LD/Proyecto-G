@@ -1,19 +1,77 @@
 #acercaDeNosotros{
-    color :white;
+    color :#ffffff;
     background-color: #b11b1b;
+    padding: 35px;
 }
 
 #mision{
-    color :white;
-    background-color: #1e1e1e;
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 25px;
+    padding-right: 500px;
+    padding-bottom: 35px;
+    padding-top: 25px;
 }
 
 #vision{
-    color :white;
-    background-color: #1e1e1e;
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 500px;
+    padding-right: 25px;
+    padding-bottom: 35px;
 }
 
 #valores{
-    color :white;
-    background-color: #1e1e1e;
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 25px;
+    padding-right: 500px;
+    padding-bottom: 35px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 16px;
+}
+
+#fotos {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#fotos img {
+    border-radius: 100%;
+    margin-top: 25px;
+}
+
+#fotos div {
+    margin-left: 70px;
+    margin-right: 50px;
+    width: 200px;
+}
+
+body {
+    background-color: #b11b1b;
+}
+
+.name {
+    margin-bottom: -5px;
+}
+
+.trabajo {
+    color: #b11b1b;
+}
+
+#team {
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    padding-top: 50px;
 }
