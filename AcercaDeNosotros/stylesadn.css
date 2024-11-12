@@ -73,5 +73,13 @@ body {
     color: #ffffff;
     background-color: #000000;
     text-align: center;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
+}
+
+#more {
+    color :#ffffff;
+    background-color: #000000;
+    padding: 60px;
+    text-align: center;
+
 }
