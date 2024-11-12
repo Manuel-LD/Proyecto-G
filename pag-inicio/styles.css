@@ -60,10 +60,35 @@ button{
     padding: 80px 80px;
 }
 
+.inf-p{
+    padding-bottom: 30px;
+}
+
 h3{
+    font-weight: bold;
     font-size: 64px;
 }
 
 p{
     font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+    .d-flex  {
+        flex-direction: column;
+    }
+    h3{
+        font-size: 32px;
+    }
+    
+    p{
+        font-size: 12px;
+    }
+    .inf-h3{
+        padding: 40px 40px;
+    }
+    
+    .inf-p-btn{
+        padding: 40px 40px;
+    }
 }
