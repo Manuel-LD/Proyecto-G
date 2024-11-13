@@ -95,8 +95,45 @@ body {
     font-family: 'Roboto', sans-serif; 
 }
 
+
+/* Mobile responsive */
+
 /* Extra small devices (phones, 600px and down) */
-/*@media only screen and (max-width: 600px) {...}*/
+@media only screen and (max-width: 600px) {
+
+    #acercaDeNosotros {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100%;
+    }
+
+    #mision {
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow-wrap: break-word;
+    }
+
+    #vision {
+        /*text-align: center; */
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #valores {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100%;
+    }
+
+    #fotos div {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #more {
+        padding: 20px;
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /*@media only screen and (min-width: 600px) {...}*/
