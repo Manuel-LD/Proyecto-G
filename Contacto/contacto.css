@@ -1,11 +1,9 @@
 /*NAVBAR*/
-
 .navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 0;
+    display: flex;
+    justify-content: right;
     align-items: center;
 }
-
 .boton-nav{
     padding: 8px 30px;
     border-radius: 20px;
