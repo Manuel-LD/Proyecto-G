@@ -192,3 +192,78 @@ footer{
 .contenedor-fotter-pie-icons i{
     margin: 5px;
 }
+
+.logo-fotter{
+    display: flex;
+}
+.logo-fotter img{
+    width: 100px;
+
+}
+
+@media (max-width: 375px ) {
+    .contenedor {
+        flex-direction: column;
+        height: 100%;
+        padding: 15px;
+    }
+    .contenedor-titulo{
+        width: 100%;
+    }
+    .contenedor-forms {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+     /* Footer */
+     footer {
+        width: 100%;
+        height: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .logo-fotter{
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-fotter img{
+        margin: 10px;
+        padding: 10px;
+    }
+    .contenedor-fotter-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-fotter-nav nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-fotter-nav a{
+        margin: 10px;
+        padding: 10px;
+    }
+    .email-telefono {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo-fotter{
+        display: flex;
+    }
+    .logo-fotter img{
+        width: 100px;
+    
+    }
+}
