@@ -1,3 +1,54 @@
+/*NAVBAR*/
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 0;
+    align-items: center;
+}
+
+.boton-nav{
+    padding: 8px 30px;
+    border-radius: 20px;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.boton-nav:hover{
+    cursor: pointer;
+}
+.boton-comprar{
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+}
+
+.boton-comprar:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #b11b1b;
+}
+
+.boton-unirse {
+    background-color: white;
+    color: black;
+    border: 1px solid #b11b1b;
+}
+.boton-unirse:hover {
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+}
+
+.img-navbar{
+    height: 40px;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(white, var(--bs-bg-opacity)) !important;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -201,7 +252,7 @@ footer{
 
 }
 
-@media (max-width: 375px ) {
+@media (max-width: 375px  ) {
     .contenedor {
         flex-direction: column;
         height: 100%;
@@ -265,5 +316,68 @@ footer{
     .logo-fotter img{
         width: 100px;
     
+    }
+}
+@media (max-width: 825px) {
+    footer {
+        width: 100%;
+        height: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .footer-navegacion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+@media (max-width: 750px) {
+    .contenedor {
+        flex-direction: column;
+        height: auto; /* Cambié a auto para que el contenido se ajuste sin comprimirse */
+        padding: 15px; /* Un poco más de padding para evitar que los elementos toquen los bordes */
+        box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño total */
+    }
+    .contenedor-titulo {
+        width: 100%;
+        margin-bottom: 15px; /* Añadí un margen inferior para separar del siguiente contenido */
+    }
+    .contenedor-forms {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    footer {
+        width: 100%;
+        height: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .logo-fotter{
+        width: 0px;
+    }
+    .footer img{
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-navegacion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-navegacion a{
+        font-size: 1rem;
+        width: 100px;
     }
 }
