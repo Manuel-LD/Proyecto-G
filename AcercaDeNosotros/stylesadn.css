@@ -59,9 +59,11 @@ p {
 }
 
 #fotos div {
-    margin-left: 70px;
-    margin-right: 50px;
     width: 200px;
+}
+
+.fotos-cont {
+    text-align: center;
 }
 
 body {
@@ -95,6 +97,13 @@ body {
     font-family: 'Roboto', sans-serif; 
 }
 
+.not-visible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
 
 /* Mobile responsive */
 
