@@ -1,0 +1,91 @@
+.mainTitle {
+    text-align: left;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    font-weight: 700;
+}
+
+.subTitle {
+    text-align: left;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.subTitle2 {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    text-align: left;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h5 {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    font-size: 16px;
+    background-color: #B11B1B;
+    border-radius: 25px;
+}
+
+.btn:active {
+    background-color: #4B0B0B;
+    border-color: #4B0B0B;
+}
+
+.containerBtn {
+    text-align: right;
+    padding-top: 3%;
+    padding-left: 4%;
+}
+
+.secondHeader {
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.backgroundTitle {
+    background: linear-gradient(to bottom, #B11B1B, #4B0B0B);
+    padding-left: 10%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    width: 100%;
+    height: 100%;
+}
+
+.circleImg {
+    border-radius: 300%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+/* Las siguientes lineas son sobre mi Tooltip*/
+.product-container:hover .custom-tooltip {
+    display: block;
+}
+
+.product-container {
+    position: relative;
+    width: 200px; /* Ajusta al tamaño de tu imagen */
+}
+
+.custom-tooltip {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    z-index: 10;
+    display: none;
+}
+/*Aquí terminan las especificaciones para mi Tooltip*/
