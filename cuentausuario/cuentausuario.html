@@ -11,7 +11,7 @@
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--CSS-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./cuentausuario.css">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
     <div class="container-form">
 
     <!--FORMULARIO CONFIGURACIÓN DE CUENTA-->  
-        <form class="row g-3">
+        <form class="row g-3" id="userForm1">
 
             <div>
                 <p class="title-p"><strong>Cuenta de usuario</strong> </p>
@@ -36,20 +36,22 @@
                 <div class="container-form-inf">
                     <label for="inputName" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="inputName">
+                    <div id="nameError" class="error-message text-danger" style="display:none;"><p>Campo obligatorio, solo se aceptan letras.</p></div>
                 </div>
 
                 <!--Input de correo electronico-->
                 <div class="container-form-inf">
                     <label for="inputEmail" class="form-label">Correo electronico</label>
                     <input type="email" class="form-control" id="inputEmail">
+                    <div id="emailError" class="error-message text-danger" style="display:none;"><p>Campo obligatorio, correo electronico no válido</p></div>
                 </div>
-
+                    
                 <!--Input de Contraseña-->
                 <div class="container-form-inf">
                     <label for="inputPassword" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="inputPassword">
+                    <div id="passwordError" class="error-message text-danger" style="display:none;"><p>Campo obligatorio, la contraseña debe contener de 8 a 15 caracteres</p></div>
                 </div>
-
             </div>
 
             <!--Contenedor de Dirección, Ciudad, Código postal-->
@@ -58,6 +60,7 @@
                 <div class="container-form-inf">
                     <label for="inputAddress" class="form-label">Dirección</label>
                     <input type="text" class="form-control" id="inputAddress">
+                    <div id="addressError" class="error-message text-danger" style="display:none;">Campo obligatorio, ejemplo: Benito Juarez #33</div>
                 </div>
 
                 <!--Input de Ciudad-->
@@ -195,6 +198,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="cuentausuario.js".js"></script>
 </body>
 </html>
