@@ -12,8 +12,19 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     const terminos = document.getElementById('terminos').checked;  
 
     // Validar los campos
-    if (!nombre || !apellido) {
-        alert('Por favor, ingrese su nombre y apellido.');
+    if (!nombre) {
+        alert('Por favor, ingrese su nombre.');
+        return;
+    }else if(!/^[a-zA-Z\s]+$/.test(nombre)){
+        alert('El nombre solo puede contener letras y espacios')
+        return;
+    }
+    // Validar apellido
+    if (!apellido) {
+        alert('Por favor, ingrese su apellido.');
+        return;
+    }else if(!/^[a-zA-Z\s]+$/.test(apellido)){
+        alert('El apellido solo puede contener letras y espacios')
         return;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
