@@ -89,7 +89,6 @@ html, body {
 /*Formulario*/
 .contenedor-forms {
     color: white;
-    width: 45%;
     margin-right: 20px;
     display: flex;
     flex-direction: column;
@@ -122,6 +121,7 @@ html, body {
 .contenedor-forms textarea{
     background-color: transparent;
     height: 200px;
+    color: white;
 }
 
 
@@ -170,6 +170,7 @@ html, body {
     margin: 10px;
     color: white    ;
     font-size: 10px;
+    letter-spacing: 2px;
 }
 
 /*Fotter*/
@@ -246,6 +247,8 @@ footer{
 
 }
 
+/*Termina el css del fotter*/
+
 @media (max-width: 375px  ) {
     .contenedor {
         flex-direction: column;
@@ -284,6 +287,7 @@ footer{
         padding: 10px;
     }
     .contenedor-fotter-nav{
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -293,6 +297,7 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
     }
 
     .contenedor-fotter-nav a{
@@ -332,13 +337,13 @@ footer{
 @media (max-width: 750px) {
     .contenedor {
         flex-direction: column;
-        height: auto; /* Cambié a auto para que el contenido se ajuste sin comprimirse */
-        padding: 15px; /* Un poco más de padding para evitar que los elementos toquen los bordes */
-        box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño total */
+        height: auto;
+        padding: 15px; 
+        box-sizing: border-box;
     }
     .contenedor-titulo {
         width: 100%;
-        margin-bottom: 15px; /* Añadí un margen inferior para separar del siguiente contenido */
+        margin-bottom: 15px; 
     }
     .contenedor-forms {
         width: 100%;
