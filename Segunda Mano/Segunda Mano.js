@@ -1,49 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar el botón de "Agregar al carrito"
-    const addCartButtons = document.querySelectorAll('.btn-add-cart');
+// Función para cargar y mostrar los productos
+async function cargarProductos() {
+    try {
+        // Usa fetch para obtener los datos del archivo JSON
+        const respuesta = await fetch('../listaproductos.json');
+        
+        // Verifica si la respuesta fue exitosa
+        if (!respuesta.ok) {
+            throw new Error(`Error al cargar los datos: ${respuesta.statusText}`);
+        }
 
-    addCartButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productName = "Nombre del Producto"; // Obtén el nombre dinámicamente si es necesario
-            const productPrice = 50; // Obtén el precio dinámicamente también
-            
-            // Crear un objeto para el producto
-            const product = {
-                name: productName,
-                price: productPrice
-            };
+        // Convierte la respuesta a formato JSON
+        const data = await respuesta.json();
 
-            // Obtener carrito existente o inicializar uno nuevo
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Agregar producto al carrito
-            cart.push(product);
-
-            // Guardar el carrito actualizado en el localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-
-            alert('Producto agregado al carrito');
+        // Itera sobre cada producto y muestra sus detalles en la consola (o en la página)
+        data.products.forEach(producto => {
+            console.log(`ID: ${producto.id}`);
+            console.log(`Nombre: ${producto.name}`);
+            console.log(`Categoría: ${producto.category}`);
+            console.log(`Imagen: ${producto.img}`);
+            console.log(`Precio: ${producto.price}`);
+            console.log(`Color: ${producto.color}`);
+            console.log(`Descripción: ${producto.description}`);
+            console.log('---------------------------');
         });
+
+        // Puedes usar estos datos para crear elementos en el DOM y mostrar los productos en la página
+        mostrarProductos(data.products);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Función para mostrar productos en el DOM (opcional)
+function mostrarProductos(productos) {
+    const contenedor = document.getElementById('contenedor-productos'); // Asegúrate de tener un div con este ID en tu HTML
+    productos.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('producto');
+        productoDiv.innerHTML = `
+            <img src="${producto.img}" alt="${producto.name}" />
+            <h2>${producto.name}</h2>
+            <p>Precio: ${producto.price}</p>
+            <p>Color: ${producto.color}</p>
+            <p>Descripción: ${producto.description}</p>
+        `;
+        contenedor.appendChild(productoDiv);
     });
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cartIcon = document.querySelector('#cart-icon'); // Selecciona el ícono del carrito en tu navbar
-
-    // Obtener productos del carrito desde localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartIcon.textContent = `Carrito (${cart.length})`; // Actualiza el texto del carrito
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const productContainer = document.querySelector('.product-container');
-    const tooltip = document.querySelector('.custom-tooltip');
-
-    productContainer.addEventListener('mouseenter', () => {
-        tooltip.style.display = 'block';
-    });
-
-    productContainer.addEventListener('mouseleave', () => {
-        tooltip.style.display = 'none';
-    });
-});
+// Llama a la función para cargar y mostrar los productos
+cargarProductos();

@@ -48,6 +48,7 @@
 }
 /*Termina estilos navbar*/
 
+/*Aqui comienzan los contenidos de mi grid*/
 .mainTitle {
     text-align: left;
     font-size: 48px;
@@ -119,15 +120,16 @@ h5 {
     border-radius: 300%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
+/*Aqui terminan los estilos de mi grid*/
 
-/* Las siguientes lineas son sobre mi Tooltip*/
+/* Las siguientes lineas son sobre mi Tooltip
 .product-container:hover .custom-tooltip {
     display: block;
 }
 
 .product-container {
     position: relative;
-    width: 200px; /* Ajusta al tamaño de tu imagen */
+    width: 200px; 
 }
 
 .custom-tooltip {
@@ -138,9 +140,9 @@ h5 {
     z-index: 10;
     display: none;
 }
-/*Aquí terminan las especificaciones para mi Tooltip*/
+Aquí terminan las especificaciones para mi Tooltip*/
 
-/*Fotter*/
+/*AQUI INICIA EL FOOTER*/
 footer{
     display: flex;
     justify-content: center;
@@ -344,3 +346,4 @@ footer{
         width: 100px;
     }
 }
+/*AQUI ACABA EL FOOTER*/
