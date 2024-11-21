@@ -15,7 +15,59 @@
 </div>
 
 <body>
-    <h1 class="text-center">aqui ira mi navbar</h1>
+  <!--Inicia navbar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html"><img src="../Imagenes/logo mytech.PNG" class="img-navbar" alt="" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas_falsas/productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas_falsas/inicio_sesion.html">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Más opciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Contacto/contacto.html">Contacto</a></li>
+              <li><a class="dropdown-item" href="../AcercaDeNosotros/indexadn.html">Nosotros</a></li>
+              <li><a class="dropdown-item" href="../paginas_falsas/panel_usuario.html">Panel de usuario</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link boton-nav boton-unirse" href="../paginas_falsas/registrar_usuario.html">Unirse</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link boton-nav boton-comprar" href="../paginas_falsas/productos.html">Comprar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Termina navbar-->
 
     <div class="container my-1">
         <section>
@@ -236,13 +288,33 @@
                 </div>
         </section>
     </div>
-
-    <footer>
-        <h1 class="text-center">Aqui ira mi footer</h1>
+<!--Aqui inicia mi footer-->
+    <footer class="contendor-fotter footer">
+        <div class="logo-fotter">
+            <img src="./Imagenes/logo mytech.PNG" alt="Logo">
+        </div>
+        <div class="contenedor-fotter-nav">
+            <nav>
+                <a href="./AcercaDeNosotros/indexadn.html">Sobre nosotros</a>
+                <a href="./Contacto/contacto.html">Contacto</a>
+                <a href="">FAQs</a>
+                <a href="">Soporte</a>
+                <a href="">Blog</a>
+            </nav>
+        </div>
+        <div class="contenedor-fotter-pie-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-x"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
     </footer>
-    <br>
-    <br>
-
+   <hr id="linea">
+    <div class="contenedor-fotter-pie">
+        <p>© 2024 Tech Store. All rights reserved. </p>
+    </div> 
+<!--Aqui termina mi footer-->
 
 
 
