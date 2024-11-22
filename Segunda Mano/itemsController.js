@@ -30,8 +30,11 @@ class ItemController {
 
    //ELIMINAR ITEM
    removeItem(id) {
-    
+    // Usa el método filter para excluir el item con el id proporcionado
+    this.items = this.items.filter(item => item.id !== id);
 
+    // Opcional: Devuelve el arreglo actualizado para verificar el resultado
+    return this.items;
    }
 
 
