@@ -36,9 +36,5 @@ class ItemController {
     // Opcional: Devuelve el arreglo actualizado para verificar el resultado
     return this.items;
    }
-
-
-
-
 }
 
