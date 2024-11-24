@@ -62,19 +62,24 @@ html, body {
 .contenedor {
     background: linear-gradient(to right, #B11B1B, #4B0B0B);
     padding: 20px;
-    display: flex;
     justify-content: space-between;
     align-items: center; 
     height: 100vh;
 }
 
+#categoria{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 10px;
+}
 /*Titulo*/
 .contenedor-titulo {
-    width: 45%;
+    width: 100%;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
 }
 .contenedor-titulo h1{
     font-size: 50px;
@@ -95,6 +100,10 @@ html, body {
     gap: 15px;
 }
 .nombre-apellido {
+    display: flex;
+    gap: 15px;
+}
+.stock-precio {
     display: flex;
     gap: 15px;
 }
