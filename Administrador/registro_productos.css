@@ -65,6 +65,7 @@ html, body {
     justify-content: space-between;
     align-items: center; 
     height: 100vh;
+    
 }
 
 #categoria{
@@ -75,6 +76,7 @@ html, body {
     border: 1px solid #ccc;
     border-radius: 20px;
     margin-top: 10px;
+    
 }
 /*Titulo*/
 .contenedor-titulo {
@@ -97,6 +99,7 @@ html, body {
     margin-right: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 15px;
 }
 .nombre-apellido {
