@@ -25,10 +25,7 @@ newItemForm.addEventListener('submit', (event) => {
     const price = newItemPrice.value;
     const imageUrl = newItemImageUrl.value;
 
-    /*
-        Validation code here
-    */
-
+   
     // Add the item to the ItemsController
     itemsController.addItem(name, description, stock, price,imageUrl);
 
