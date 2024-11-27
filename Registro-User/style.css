@@ -1,0 +1,162 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #b11b1b;
+}
+
+.form {
+    color: white;
+}
+
+/* Navbar */
+.navbar-collapse {
+    background-color: aliceblue;
+}
+
+
+.boton-nav {
+    padding: 8px 30px;
+    border-radius: 20px;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.boton-nav:hover {
+    cursor: pointer;
+}
+
+.boton-comprar {
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+}
+
+.boton-comprar:hover {
+    background-color: white;
+    color: black;
+}
+
+.boton-unirse {
+    background-color: white;
+    color: black;
+    border: 1px solid #b11b1b;
+}
+
+.boton-unirse:hover {
+    background-color: #b11b1b;
+    color: white;
+}
+.img-navbar {
+    height: 40px; /* Altura fija para que coincida con la altura del navbar */
+    width: auto; /* Mantiene las proporciones */
+}
+
+/* Botón enviar */
+.btn-primary {
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    color: white; /* Mantener el color blanco */
+    font-weight: bold; /* Aumenta el grosor del texto */
+    text-align: center; /* Centrado, si es necesario */
+    font-size: 1.8rem; /* Ajusta el tamaño según lo que prefieras */
+}
+
+
+/* Footer principal */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 20px; /* Menor padding para compactar */
+}
+
+/* Estilo del logo en el footer */
+.footer-logo {
+    max-width: 90px; /* Tamaño más pequeño del logo */
+    height: auto;
+    margin-bottom: 10px; /* Reduce espacio debajo del logo */
+}
+
+/* Navegación del footer */
+.contenedor-fotter-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite ajustar en pantallas pequeñas */
+    gap: 15px; /* Espaciado uniforme entre los enlaces */
+    margin-bottom: 10px; /* Espaciado ajustado con el texto del copyright */
+}
+
+.contenedor-fotter-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.contenedor-fotter-nav a:hover {
+    opacity: 1; /* Resalta el enlace al pasar el ratón */
+}
+
+/* Texto de copyright */
+.contenedor-fotter-pie {
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    opacity: 0.7;
+    margin-top: 0; /* Elimina margen superior */
+}
+
+/* Cambiar color de los labels */
+form label {
+    color: white;
+}
+
+/* Cambiar color de los placeholders */
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Blanco con opacidad para que sea más sutil */
+}
+
+/* Cambiar color del texto dentro de los campos */
+form input {
+    color: white; /* Texto blanco */
+    background-color: transparent; /* Opcional, si quieres un fondo transparente */
+    border: 1px solid white; /* Bordes blancos para mayor visibilidad */
+}
+
+/* Asegurar que el checkbox también tenga texto blanco */
+form .form-check-label {
+    color: white;
+}
+
+
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 768px) {
+    .footer-link {
+        display: block; /* Cada enlace en una línea */
+        margin-bottom: 8px;
+    }
+
+    .footer-icon {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+
