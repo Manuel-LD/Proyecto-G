@@ -4,17 +4,18 @@ const itemsController = new ItemsControler(0);
 
 function addItemCard(item){
     const quantity = item.quantity || 1;
-    const itemHTML = '<div class="card" style="width: 20rem;">\n' +
+    const itemHTML = '<div class="col margenbutton">'+
+         ' <div class="cardi" style="width: 18rem;">\n' +
         '    <img src="'+item.img +'" class="img-fluid circleImg" width="300" height="250"  alt="product image">\n' +
         '    <div class="card-body">\n' +
-        '        <h5 class="card-title">'+item.name+'</h5>\n' +
-        '        <p class="card-text">'+item.descripcion+'</p>\n' +
-        '        <div class="botones">\n' +
-        '        <a href="#" class="btn btn-primary">Comprar</a>\n' +
-        '           <button class="btn btn-secondary minus" data-index="' + item.id + '">-</button>\n' +
+        '        <h5 class="nameProduct text-center">'+item.name+'</h5>\n' +
+        '        <p class="card-text text-center">'+item.descripcion+'</p>\n' +
+        '        <div class="botones text-center">\n' +
+        '        <a href="#" class="boton-nav boton-comprar">Agregar</a>\n' +
+        '           <button class="btn btn-dark minus" data-index="' + item.id + '">-</button>\n' +
         '            <span class="cantidad" id="quantity-'+ item.id +'">' + quantity + '</span>\n' +  
-        '            <button class="btn btn-secondary plus" data-index="' + item.id + '">+</button>\n' +
-        '        <a href="#" class="btn btn-primary">Eliminar</a>\n' +//pendiente el error perla
+        '            <button class="btn btn-dark plus" data-index="' + item.id + '">+</button>\n' +
+        '    </div>\n' +
         '    </div>\n' +
         '    </div>\n' +
         '</div>\n' +
@@ -53,33 +54,33 @@ function loadStorageSampleData(){
     
     if(!localStorage.getItem("items")){
         
-        const sampleItems = [{'id':1, 'name':'Telefono',
+        const sampleItems = [{'id':1, 'name':'SAMSUNG Galaxy S24',
         'img':'./assetsSegundaMano/Telefono1.png',
-        'descripcion':'Samsung E5', 'quantity':1,},
-        {'id':2,'name':'Audifonos',
+        'descripcion':'Ultra, Gris, 12GB_512GB', 'quantity':1,},
+        {'id':2,'name':'Beats Solo 4',
         'img':'./assetsSegundaMano/Audifonos.png',
-        'descripcion':'Inalámbricos', 'quantity':1,},
-        {'id':3,'name':'Computadora',
+        'descripcion':'On-Ear inalámbricos Bluetooths', 'quantity':1,},
+        {'id':3,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'8 GB RAM','quantity':1,},
-        {'id':4,'name':'SmartWatch',
+            'descripcion':'Nitro V5 Core i7','quantity':1,},
+        {'id':4,'name':'Apple SmartWatch',
             'img':'./assetsSegundaMano/Smartwatch.png',
             'descripcion':'Watch SE 2', 'quantity':1,},
-        {'id':5,'name':'Telefono',
+        {'id':5,'name':'SAMSUNG Galaxy S24',
             'img':'./assetsSegundaMano/Telefono1.png',
-            'descripcion':'Samsung G1', 'quantity':1,},
-        {'id':6,'name':'Audifonos',
+            'descripcion':'Ultra, Gris, 12GB_512GB', 'quantity':1,},
+        {'id':6,'name':'Beats Solo 4',
             'img':'./assetsSegundaMano/Audifonos.png',
-            'descripcion':'Inalámbricos', 'quantity':1,},
-        {'id':7,'name':'Computadora',
+            'descripcion':'On-Ear inalámbricos Bluetooth', 'quantity':1,},
+        {'id':7,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'8 GB RAM', 'quantity':1,},
-        {'id':8,'name':'SmartWatch',
+            'descripcion':'Nitro V5 Core i7', 'quantity':1,},
+        {'id':8,'name':'Apple SmartWatch',
             'img':'./assetsSegundaMano/Smartwatch.png',
             'descripcion':'Watch SE 2', 'quantity':1,},
-        {'id':9,'name':'Computadora',
+        {'id':9,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'8 GB RAM', 'quantity':1,},
+            'descripcion':'Nitro V5 Core i7', 'quantity':1,},
         ];
         localStorage.setItem("items", JSON.stringify(sampleItems));
     }
