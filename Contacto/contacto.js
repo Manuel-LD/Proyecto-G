@@ -1,4 +1,4 @@
-// Inicializar EmailJS con tu user_id (Este paso solo es necesario hacerlo una vez)
+
 emailjs.init("obltqTS4McW3XvH5h");  
 document.getElementById('formulario').addEventListener('submit', function(event) {
     event.preventDefault();  

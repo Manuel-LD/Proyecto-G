@@ -1,3 +1,7 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 /*Empieza estilos navbar*/
 .navbar-collapse {
     flex-basis: 100%;
@@ -46,65 +50,86 @@
     --bs-bg-opacity: 1;
     background-color: rgba(white, var(--bs-bg-opacity)) !important;
 }
+
 /*Termina estilos navbar*/
+.contenedor {
+    height: 100vh;
+    padding: 0;
+  }
 
-/*Aqui comienzan los contenidos de mi grid*/
-.mainTitle {
-    text-align: left;
-    font-size: 48px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
-    font-weight: 700;
-}
-.centarHeader{
-    margin: auto;
-    background-color: #FFFAFA;
-}
-.subTitle {
-    text-align: left;
-    font-size: 36px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
-.subTitle2 {
-    text-align: left;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-}
-.containerBtn {
-    text-align: right;
-    padding-top: 3%;
-    padding-left: 4%;
-}
-.backgroundTitle {
-    background: linear-gradient(to bottom, #B11B1B, #4B0B0B);
-    padding-left: 10%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 50px;
-}
-a{
-    text-decoration: none;
-}
-.circleImg {
-    border-radius: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-.circleImg:hover{
-    transform: scale(1.1, 1.1);
-}
-.nameProduct{
-    font-weight: 900;
-    margin-top: 10px;
-}
-.margenbutton{
-    margin-bottom: 40px;
+.cont-red{
+    background-color: #b11b1b;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    padding: 0 20px;
+    height: 25vh;
 }
 
+.cont-dark{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    
+    padding: 0 20px;
+    height: 75vh;
+}
+.cont-dark-izq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-/*AQUI INICIA EL FOOTER*/
+}
+.cont-dark-der{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-dark-der img{
+    width: 400px;
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn{
+    background-color: #b11b1b;
+    border-color: white;
+    color: white;
+    border-radius: 20px;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+    border-color: #b11b1b;
+}
+
+/*Contenodr iconos*/
+.contenedor-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+
+.contenedor-icons i{
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.contenedor-icons span {
+    margin: 10px;
+    color: white    ;
+    font-size: 10px;
+}
+
+/*Fotter*/
 footer{
     display: flex;
     justify-content: center;
@@ -182,7 +207,7 @@ footer{
     .contenedor {
         flex-direction: column;
         height: 100%;
-        padding: 15px;
+        
     }
     .contenedor-titulo{
         width: 100%;
@@ -263,10 +288,19 @@ footer{
 
 
 @media (max-width: 750px) {
+    .cont-red, .cont-dark{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 10%;
+    }
+    .cont-dark-der img{
+        width: 200px;
+    }
     .contenedor {
         flex-direction: column;
         height: auto; /* Cambié a auto para que el contenido se ajuste sin comprimirse */
-        padding: 15px; /* Un poco más de padding para evitar que los elementos toquen los bordes */
+        
         box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño total */
     }
     .contenedor-titulo {
@@ -308,4 +342,3 @@ footer{
         width: 100px;
     }
 }
-/*AQUI ACABA EL FOOTER*/
