@@ -1,4 +1,4 @@
-// Initialize a new TaskManager with currentId set to 0
+
 const itemsController = new ItemsControler(0);
 
 
@@ -92,6 +92,7 @@ function loadCardsListFromItemsController(){
         addItemCard(item);
     }
 }
+//invocar funciones
 loadStorageSampleData();
 itemsController.loadItemsFromLocalStorage();//en itemscontroler
 loadCardsListFromItemsController();
