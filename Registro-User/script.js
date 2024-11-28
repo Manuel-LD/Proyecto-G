@@ -74,11 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (event) => {
         event.preventDefault(); // Evita el envío del formulario por defecto
-
-        if (validateForm()) {
-            // Mostrar mensaje de éxito si la validación es exitosa
-            showAlert("Formulario enviado correctamente.", "success");
-            form.reset(); // Reiniciar los campos del formulario
+        const registeredUsers=JSON.parse(localStorage.getItem('users')) || [];//si no existe datos en el json regresa un []
+        const isUserRegistered=registeredUsers.find( user => user.email === emailInput.value)
+        if(isUserRegistered && validateForm()){
+            return alert('El usuario ya esta registrado');
         }
+        registeredUsers.push(
+            {name:nombreInput.value,
+             apellido:apellidoInput.value,
+             email:emailInput.value,
+             telefono:telefonoInput.value,
+             contrasena:contrasenaInput,
+            })
+
+        localStorage.setItem('users',JSON.stringify(registeredUsers));
+        // Mostrar mensaje de éxito si la validación es exitosa
+        showAlert("Formulario enviado correctamente.", "success");
+        form.reset(); // Reiniciar los campos del formulario
     });
 });
