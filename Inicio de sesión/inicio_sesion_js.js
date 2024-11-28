@@ -1,5 +1,3 @@
-
-
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Se evita el envío automático del formulario
 
@@ -17,10 +15,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Validar los inputs - Con el forEach recorres todos los inputs del formulario
     inputs.forEach(input => {
         if (!input.checkValidity() || input.value.trim() === '') {
-            input.classList.add('is-invalid');
+            input.classList.add('is-valid');
             isValid = false;
+            console.log("It's not valid!");
         } else {
             input.classList.remove('is-invalid');
+            //isValid = true;
+            console.log("It's valid!");
         }
     });
 
@@ -32,25 +33,49 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
     
     // Codificar valores cnn función btos que se guarda en la constante
-    const encodedEmail = btoa(emailInput); //aquí codificamos los datos ingresados por el input. con btoa()
-    const encodedPassword = btoa(passwordInput);
+    const encodedEmail = emailInput; //aquí codificamos los datos ingresados por el input. con el btoa(de registro de usuario)
+    const encodedPassword = passwordInput;
 
-    // Recuperar valores almacenados en localStorage
-    const storedEmail = localStorage.getItem('userEmail');
-    const storedPassword = localStorage.getItem('userPassword');
 
-    console.log(atob(storedEmail)); //aquí mostramos en consola los datos guardados en el local storage para poder ingresar. con atob() es una función para decodificar.
+
+    // Test
+    console.log("Encoded is");
+    console.log(encodedEmail); // funciona
+    console.log(encodedPassword); // funciona
+
+
+
+    // LocalStorage
+    let users = localStorage.getItem('users');
+    let usersParsed = JSON.parse(users); // para verlo como objeto, enlistado, más fácil
     
-    console.log(atob(storedPassword));
+
+
+    console.log("Here we work with the data from localStorage");
+    for(var i = 0; i < usersParsed.length; i++) {
+        // Recuperar valores almacenados en localStorage
+        let storedEmail = atob(usersParsed[i].email);
+        let storedPassword = atob(usersParsed[i].contrasena);
+
+        console.log("Decoded is");
+        console.log(storedEmail);
+        console.log(storedPassword);
+
+
+        // Validar credenciales
+        if (encodedEmail === storedEmail && encodedPassword === storedPassword) { //validamos los datos codificados ingresados actualmente con los que se encuentran en el localstorage
+            alert('Inicio de sesión exitoso');
+            window.location.href = window.location.href; // Con esto nos redirijimos a la misma pagina actual.
+            // Redirigir a la página deseada
+        }
+        else {
+            errorAlert.textContent = 'Usuario o contraseña inválidos.';
+            errorAlert.classList.remove('d-none');
+        }
+    }
+
+
+   
     
-    // Validar credenciales
-    if (encodedEmail === storedEmail && encodedPassword === storedPassword) { //validamos los datos codificados ingresados actualmente con los que se encuentran en el localstorage
-        alert('Inicio de sesión exitoso');
-        window.location.href = window.location.href; // Con esto nos redirijimos a la misma pagina actual.
-        // Redirigir a la página deseada
-    }
-    else {
-        errorAlert.textContent = 'Usuario o contraseña inválidos.';
-        errorAlert.classList.remove('d-none');
-    }
+
 });
