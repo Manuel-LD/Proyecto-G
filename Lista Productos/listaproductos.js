@@ -1,30 +1,21 @@
-// Función para cargar y mostrar los productos
+//ESTE ARCHIVO ES UNICAMENTE PARA CORROBORAR QUE EL JSON FUNCIONA CORRECTAMENTE 
+
+// función para cargar y mostrar los productos "cargarProcutos"
 async function cargarProductos() {
     try {
-        // Usa fetch para obtener los datos del archivo JSON
+        // usamos fetch para obtener los datos del archivo JSON
         const respuesta = await fetch('./listaproductos.json');
         
-        // Verifica si la respuesta fue exitosa
+        // se verifica si la respuesta fue exitosa
         if (!respuesta.ok) {
             throw new Error(`Error al cargar los datos: ${respuesta.statusText}`);
         }
 
-        // Convierte la respuesta a formato JSON
+        // convierte la respuesta a formato JSON
         const data = await respuesta.json();
 
-        // Itera sobre cada producto y muestra sus detalles en la consola (o en la página)
-        data.products.forEach(producto => {
-            console.log(`ID: ${producto.id}`);
-            console.log(`Nombre: ${producto.name}`);
-            console.log(`Categoría: ${producto.category}`);
-            console.log(`Imagen: ${producto.img}`);
-            console.log(`Precio: ${producto.price}`);
-            console.log(`Color: ${producto.color}`);
-            console.log(`Descripción: ${producto.description}`);
-            console.log('---------------------------');
-        });
 
-        // Puedes usar estos datos para crear elementos en el DOM y mostrar los productos en la página
+        // crear elementos en el DOM y mostrar los productos en la página
         mostrarProductos(data.products);
 
     } catch (error) {
@@ -32,9 +23,9 @@ async function cargarProductos() {
     }
 }
 
-// Función para mostrar productos en el DOM (opcional)
+// función para mostrar productos en el DOM 
 function mostrarProductos(productos) {
-    const contenedor = document.getElementById('contenedor-productos'); // Asegúrate de tener un div con este ID en tu HTML
+    const contenedor = document.getElementById('contenedor-productos');
     productos.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto');
@@ -49,5 +40,5 @@ function mostrarProductos(productos) {
     });
 }
 
-// Llama a la función para cargar y mostrar los productos
+// se llama a la función para cargar y mostrar los productos
 cargarProductos();
