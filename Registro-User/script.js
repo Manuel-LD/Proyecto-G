@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         registeredUsers.push(
             {name:nombreInput.value,
              apellido:apellidoInput.value,
-             email:emailInput.value,
+             email:btoa(emailInput.value), //btoa para encriptar
              telefono:telefonoInput.value,
-             contrasena:contrasenaInput,
+             contrasena:btoa(contrasenaInput.value), //btoa para encriptar, tambien agregué value
             })
 
         localStorage.setItem('users',JSON.stringify(registeredUsers));
