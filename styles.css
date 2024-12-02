@@ -9,37 +9,29 @@ body{
     align-items: center;
 }
 
-.boton-nav{
+.boton{
     padding: 8px 30px;
     border-radius: 20px;
     margin-left: 16px;
     margin-bottom: 8px;
     text-align: center;
 }
-.boton-nav:hover{
+.boton-rojo{
+    background-color: #b11b1b;
+    color: white;
+    border: 1px solid black;
+}
+.boton:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid #b11b1b;
     cursor: pointer;
 }
-.boton-comprar{
-    background-color: #b11b1b;
-    color: white;
-    border: 1px solid black;
-}
 
-.boton-comprar:hover{
+.boton-blanco {
     background-color: white;
     color: black;
     border: 1px solid #b11b1b;
-}
-
-.boton-unirse {
-    background-color: white;
-    color: black;
-    border: 1px solid #b11b1b;
-}
-.boton-unirse:hover {
-    background-color: #b11b1b;
-    color: white;
-    border: 1px solid black;
 }
 
 .img-navbar{
@@ -53,13 +45,9 @@ body{
 
 /*Termina estilos navbar*/
 
-button{
-    background-color: #b11b1b;
-    color: white;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 6px 20px;
-}
+
+
+
 
 .inf-h3{
     padding: 80px 80px;
@@ -78,28 +66,180 @@ h3{
     font-size: 64px;
 }
 
-p{
+.header p{
     font-size: 24px;
 }
 
-@media (max-width: 768px) {
-    .d-flex  {
-        flex-direction: column;
-    }
-    h3{
-        font-size: 32px;
-    }
+/*Empieza Registro de usuario*/
+form label {
+    color: white;
+}
+
+/* Cambiar color de los placeholders */
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Blanco con opacidad para que sea más sutil */
+}
+
+/* Cambiar color del texto dentro de los campos */
+form input {
+    color: white; /* Texto blanco */
+    background-color: transparent; /* Opcional, si quieres un fondo transparente */
+    border: 1px solid white; /* Bordes blancos para mayor visibilidad */
+}
+
+/* Asegurar que el checkbox también tenga texto blanco */
+form .form-check-label {
+    color: white;
+}
+
+.container-form{
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+}
+h2 {
+    color: white; /* Mantener el color blanco */
+    font-weight: bold; /* Aumenta el grosor del texto */
+    text-align: center; /* Centrado, si es necesario */
+    font-size: 1.8rem; /* Ajusta el tamaño según lo que prefieras */
+}
+
+/*Termina registro de usuario*/
+
+/*Inicio de sesion*/
+.contenedor {
+    height: 100vh;
+    padding: 0;
+  }
+
+.cont-red{
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    padding: 0 20px;
+    height: 25vh;
+}
+
+.cont-dark{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
     
-    p{
-        font-size: 12px;
-    }
-    .inf-h3{
-        padding: 40px 40px;
-    }
-    
-    .inf-p-btn{
-        padding: 40px 40px;
-    }
+    padding: 0 20px;
+    height: 75vh;
+}
+
+.cont-dark-izq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.cont-dark-der{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-dark-der img{
+    width: 400px;
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+}
+/*Termina inicio de sesion*/
+/*Inicia contactanos*/
+.contenedor-contactanos{
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 100vh;
+}
+
+/*Titulo*/
+.contenedor-titulo {
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.contenedor-titulo h1{
+    font-size: 50px;
+    color: white;
+    font-family: 'Roboto';
+}
+.contenedor-titulo p{
+    color: white;
+    font-family: 'Roboto';
+}
+
+/*Formulario*/
+.contenedor-forms {
+    color: white;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.nombre-apellido {
+    display: flex;
+    gap: 15px;
+}
+.email-telefono {
+    display: flex;
+    gap: 15px;
+}
+.campo {
+    flex: 1;
+}
+.contenedor-forms label {
+    font-size: 14px;
+    font-family: 'Roboto';
+}
+.contenedor-forms input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
+.contenedor-forms textarea{
+    background-color: transparent;
+    height: 200px;
+    color: white;
+}
+
+
+/*Terminos y condiciones*/
+.terminos {
+    display: flex;                   
+    justify-content: left;         
+    align-items: center;           
+    gap: 10px;                     
+}
+.terminos input {
+    width: 20px;                   
+    height: 20px; 
+    margin: 0px;                   
+}
+.terminos label {
+    font-size: 14px;               
+    color: white;                 
+}
+
+/*Boton de enviar*/
+.contenedor-forms button{
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 /*Contenodr iconos*/
@@ -122,51 +262,252 @@ p{
     margin: 10px;
     color: white    ;
     font-size: 10px;
+    letter-spacing: 2px;
+}
+/*Termina contactanos*/
+/*Empieza acerca de nosotros*/
+#acercaDeNosotros{
+    color :#ffffff;
+    background-color: #b11b1b;
+    padding: 35px;
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+    font-family: 'Roboto', sans-serif; 
 }
 
-/*Fotter*/
-footer{
+#mision{
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 25px;
+    padding-right: 500px;
+    padding-bottom: 35px;
+    padding-top: 25px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#vision{
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 500px;
+    padding-right: 25px;
+    padding-bottom: 35px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#valores{
+    color :#ffffff;
+    background-color: #000000;
+    padding-left: 25px;
+    padding-right: 500px;
+    padding-bottom: 65px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+h1 {
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#fotos {
+    padding-top: 80px;
     display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#fotos img {
+    border-radius: 100%;
+    margin-top: 25px;
+}
+
+#fotos div {
+    width: 200px;
+}
+
+.fotos-cont {
+    text-align: center;
+}
+
+.name {
+    margin-bottom: -5px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.trabajo {
+    color: #b11b1b;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#team {
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    /*padding-top: 50px;*/
+    font-family: 'Roboto', sans-serif; 
+}
+
+#more {
+    color :#ffffff;
+    background-color: #000000;
+    padding: 60px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.not-visible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+/*Termina acerca de nosotros*/
+/*Productos segunda mano*/
+/*Aqui comienzan los contenidos de mi grid*/
+.mainTitle {
+    text-align: left;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    font-weight: 700;
+}
+.centarHeader{
+    margin: auto;
+    background-color: #FFFAFA;
+}
+.subTitle {
+    text-align: left;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.subTitle2 {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+.containerBtn {
+    text-align: right;
+    padding-top: 3%;
+    padding-left: 4%;
+}
+.backgroundTitle {
+    background: linear-gradient(to bottom, #B11B1B, #4B0B0B);
+    padding-left: 10%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+}
+a{
+    text-decoration: none;
+}
+.circleImg {
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.circleImg:hover{
+    transform: scale(1.1, 1.1);
+}
+.nameProduct{
+    font-weight: 900;
+    margin-top: 10px;
+}
+.margenbutton{
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Contenodr iconos*/
+.contenedor-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.contenedor-icons i{
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.contenedor-icons span {
+    margin: 10px;
+    color: white    ;
+    font-size: 10px;
+}
+
+
+/* Footer principal */
+.footer {
+    display: flex;
+    height: 300px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 300px;
+    padding: 20px; /* Menor padding para compactar */
     background-color: white;
 }
 
-.logo-fotter{
-    display: flex;
-    width:30%;
-}
-.logo-fotter img{
-    display: flex;
-    margin-left: 100px;
-    padding: 10px;
-}
-
-/*Barra de navegacion fotter*/
-.contenedor-fotter-nav{
-    width: 40%;
+.footer div{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 30%;
 }
-.contenedor-fotter-nav a{
-    font-family: 'Roboto';
-    text-decoration: none;
-    margin: 10px;
-    color: black;
+.contenedor-fotter-pie-icons i {
+    margin: 5px;
+}
+/* Estilo del logo en el footer */
+.footer-logo {
+    max-width: 90px; /* Tamaño más pequeño del logo */
+    height: auto;
+    margin-bottom: 10px; /* Reduce espacio debajo del logo */
 }
 
-.contenedor-fotter-pie{
+/* Navegación del footer */
+.contenedor-fotter-nav {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 50px;
+    flex-wrap: wrap; /* Permite ajustar en pantallas pequeñas */
+    gap: 15px; /* Espaciado uniforme entre los enlaces */
+    margin-bottom: 10px; /* Espaciado ajustado con el texto del copyright */
+}
+
+.contenedor-fotter-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    margin: 3px;
+}
+
+.contenedor-fotter-nav a:hover {
+    opacity: 1; /* Resalta el enlace al pasar el ratón */
 }
 
 .contenedor-fotter-pie a{
-    font-family: 'Roboto';
     text-decoration: none;
     margin: 10px;
     color: black;
@@ -176,123 +517,83 @@ footer{
 #linea{
     border: none;              
     border-top: 2px solid black; 
-    margin: 20px;             
+    margin: 20px;
+    background-color: white;             
 }
 
-.contenedor-fotter-pie-icons{
+.contenedor-fotter-pie{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 30%;
+    width: 100%;
+    height: 50px;
+    background-color: white;
 }
 
-.contenedor-fotter-pie-icons i{
-    margin: 5px;
+.contenedor-fotter-pie a{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    opacity: 50%;
 }
 
-.logo-fotter{
-    display: flex;
-}
-.logo-fotter img{
-    width: 100px;
-
-}
-
-@media (max-width: 375px ) {
-    .contenedor {
-        flex-direction: column;
-        height: 100%;
-        padding: 15px;
-    }
-    .contenedor-titulo{
-        width: 100%;
-    }
-    .contenedor-forms {
-        width: 100%;
-        margin-right: 0;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-     /* Footer */
-     footer {
-        width: 100%;
-        height: 100%;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-    }
-    .logo-fotter{
-        width: 100%;
-        margin: 10px;
-        padding: 10px;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo-fotter img{
-        margin: 10px;
-        padding: 10px;
-    }
-    .contenedor-fotter-nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .contenedor-fotter-nav nav{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 768px) {
+    /*Footer*/
+    .footer-link {
+        display: block; /* Cada enlace en una línea */
+        margin-bottom: 8px;
     }
 
-    .contenedor-fotter-nav a{
-        margin: 10px;
-        padding: 10px;
+    .footer-icon {
+        display: inline-block;
+        margin-bottom: 10px;
     }
-    .email-telefono {
-        display: flex;
+    .footer{
         flex-direction: column;
-        gap: 15px;
+        text-align: center;
     }
-    .logo-fotter{
-        display: flex;
+    .d-flex  {
+        flex-direction: column;
     }
-    .logo-fotter img{
-        width: 100px;
+    /*pag inicio*/
+    h3{
+        font-size: 32px;
+    }
     
+    p{
+        font-size: 12px;
     }
-}
-
-@media (max-width: 825px) {
-    footer {
-        width: 100%;
-        height: 100%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+    .inf-h3{
+        padding: 40px 40px;
     }
-    .footer-navegacion{
+    
+    .inf-p-btn{
+        padding: 40px 40px;
+    }
+    /*Inicio de sesion*/
+    .cont-red, .cont-dark{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        height: auto;
+        padding: 10%;
     }
-}
 
+    .cont-dark-der img{
+        width: 200px;
+    }
 
-
-@media (max-width: 750px) {
     .contenedor {
         flex-direction: column;
         height: auto; /* Cambié a auto para que el contenido se ajuste sin comprimirse */
-        padding: 15px; /* Un poco más de padding para evitar que los elementos toquen los bordes */
+        
         box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño total */
     }
+
     .contenedor-titulo {
         width: 100%;
         margin-bottom: 15px; /* Añadí un margen inferior para separar del siguiente contenido */
     }
+
     .contenedor-forms {
         width: 100%;
         margin-right: 0;
@@ -301,30 +602,39 @@ footer{
         flex-direction: column;
         gap: 12px;
     }
-    footer {
+
+    /*Acerca de nosotros*/
+    #acercaDeNosotros {
+        padding-left: 5px;
+        padding-right: 5px;
         width: 100%;
-        height: 100%;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
     }
-    .logo-fotter{
-        width: 0px;
+
+    #mision {
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow-wrap: break-word;
     }
-    .footer img{
-        margin: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    #vision {
+        /*text-align: center; */
+        padding-left: 5px;
+        padding-right: 5px;
     }
-    .footer-navegacion{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    #valores {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100%;
     }
-    .footer-navegacion a{
-        font-size: 1rem;
-        width: 100px;
+
+    #fotos div {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #more {
+        padding: 20px;
     }
 }
+
