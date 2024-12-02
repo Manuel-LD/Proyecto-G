@@ -11,7 +11,7 @@ function addItemCard(item){
         '        <h5 class="nameProduct text-center">'+item.name+'</h5>\n' +
         '        <p class="card-text text-center">'+item.descripcion+'</p>\n' +
         '        <div class="botones text-center">\n' +
-        '        <a href="#" class="boton-nav boton-comprar">Agregar</a>\n' +
+        '        <a href="#" class="boton boton-rojo">Agregar</a>\n' +
         '           <button class="btn btn-dark minus" data-index="' + item.id + '">-</button>\n' +
         '            <span class="cantidad" id="quantity-'+ item.id +'">' + quantity + '</span>\n' +  
         '            <button class="btn btn-dark plus" data-index="' + item.id + '">+</button>\n' +
@@ -54,7 +54,8 @@ function loadStorageSampleData(){
     
     if(!localStorage.getItem("items")){
         
-        const sampleItems = [{'id':1, 'name':'SAMSUNG Galaxy S24',
+        const sampleItems = [
+            {'id':1, 'name':'SAMSUNG Galaxy S24',
         'img':'./assetsSegundaMano/Telefono1.png',
         'descripcion':'Ultra, Gris, 12GB_512GB', 'quantity':1,},
         {'id':2,'name':'Beats Solo 4',

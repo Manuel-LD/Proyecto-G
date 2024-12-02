@@ -12,45 +12,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!--Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="inicio_sesion_styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
   <!--Inicia navbar-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html"><img src="../Imagenes/logo mytech.PNG" class="img-navbar"
-          alt="" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="Pagina-inicio.html"><img src="Imagenes/logo mytech.PNG" class="img-navbar" alt="" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="Pagina-inicio.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../paginas_falsas/productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inicio_sesion_index.html">Iniciar Sesión</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Más opciones
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../Contacto/contacto.html">Contacto</a></li>
-              <li><a class="dropdown-item" href="../AcercaDeNosotros/indexadn.html">Nosotros</a></li>
-              <li><a class="dropdown-item" href="../paginas_falsas/panel_usuario.html">Panel de usuario</a></li>
+            <a class="nav-link" href="segundaMano.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Inicio-sesion.html">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Más opciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Contacto.html">Contacto</a></li>
+                  <li><a class="dropdown-item" href="Acerca-de-nosotros.html">Nosotros</a></li>
+                  <li><a class="dropdown-item" href="Panel-usuario.html">Panel de usuario</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link boton-nav boton-unirse" href="../paginas_falsas/registrar_usuario.html">Unirse</a>
+            <a class="nav-link boton boton-blanco" href="Registro-User.html">Unirse</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link boton-nav boton-comprar" href="../paginas_falsas/productos.html">Comprar</a>
+          <li class="nav-item"> 
+            <a class="nav-link boton boton-rojo" href="segundaMano.html">Comprar</a>
           </li>
         </ul>
       </div>
@@ -91,7 +103,7 @@
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <button type="submit" class="btn btn-primary boton boton-rojo">Ingresar</button>
           </form>
 
           <!--Implementación de la alerta de error-->
@@ -112,42 +124,35 @@
 
   <!--Aqui empieza el footer-->
   <footer class="contendor-fotter footer">
-    <div class="logo-fotter">
-      <img src="../Imagenes/logo mytech.PNG" alt="Logo">
+    <div>
+        <<a href="Pagina-inicio.html"><img src="./Imagenes/logo mytech.PNG" alt="Logo" class="footer-logo"></a>
     </div>
     <div class="contenedor-fotter-nav">
-      <nav>
-        <a href="../AcercaDeNosotros/indexadn.html">Sobre nosotros</a>
-        <a href="../Contacto/contacto.html">Contacto</a>
-        <a href="">FAQs</a>
-        <a href="">Soporte</a>
-        <a href="">Blog</a>
-      </nav>
+        <nav>
+          <a href="Acerca-de-nosotros.html">Sobre nosotros</a>
+          <a href="Contacto.html">Contacto</a>
+            <a href="">FAQs</a>
+            <a href="">Soporte</a>
+            <a href="">Blog</a>
+        </nav>
     </div>
     <div class="contenedor-fotter-pie-icons">
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-solid fa-x"></i>
-      <i class="fa-brands fa-linkedin"></i>
-      <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-solid fa-x"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-youtube"></i>
     </div>
-  </footer>
-  <!--aqui termina el footer-->
-
-  <hr id="linea">
-  <div class="contenedor-fotter-pie">
+</footer>
+<hr id="linea">
+<div class="contenedor-fotter-pie">
     <p>© 2024 Tech Store. All rights reserved. </p>
-  </div>
+</div>  
   
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <!--Link al JS-->
-  <script src="inicio_sesion_js.js"></script>
+  <script src="scripts/InicioDeSesion.js"></script>
 </body>
 
 </html>
