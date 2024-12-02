@@ -3,13 +3,15 @@ class ItemsControler{
         this.items=[];
         this.currentId=currentId;
     }
-    addItem(name,descripcion,imageUrl) {
+    addItem(name,descripcion,imageUrl,precio,categoria) {
         this.currentId++;
         let item={
             id:this.currentId,
             name:name,
             descripcion:descripcion,
-            imageUrl: imageUrl
+            imageUrl: imageUrl,
+            precio:precio,
+            categoria:categoria,
         };
         this.items.push(item);
     }
