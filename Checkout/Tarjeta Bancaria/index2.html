@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Tarjeta Bancaria</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./logo mytech.png" class="img-navbar" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Iniciar Sesión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más opciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Contacto</a></li>
+                            <li><a class="dropdown-item" href="#">Nosotros</a></li>
+                            <li><a class="dropdown-item" href="#">Panel de usuario</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link boton-nav boton-unirse">Unirse</a></li>
+                    <li class="nav-item"><a class="nav-link boton-nav boton-comprar">Comprar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-6">
+                <h2 class="text-center mb-4">Información de Tarjeta Bancaria</h2>
+                <form>
+                    <!-- Nombre del titular -->
+                    <div class="mb-3">
+                        <label for="titular" class="form-label">
+                            Nombre del Titular <span class="text-danger">(Requerido)</span>
+                        </label>
+                        <input type="text" class="form-control" id="titular" placeholder="Ingresa el nombre del titular" required>
+                    </div>
+
+                    <!-- Número de tarjeta -->
+                    <div class="mb-3">
+                        <label for="numeroTarjeta" class="form-label">
+                            Número de Tarjeta <span class="text-danger">(Requerido)</span>
+                        </label>
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="1234 5678 9012 3456" maxlength="19" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+                        <small class="form-text text-muted">Formato: 1234 5678 9012 3456</small>
+                    </div>
+
+                    <!-- Fecha de vencimiento y CVV -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fechaVencimiento" class="form-label">
+                                Fecha de Vencimiento <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="month" class="form-control" id="fechaVencimiento" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cvv" class="form-label">
+                                Código CVV <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="3" pattern="\d{3}" required>
+                        </div>
+                    </div>
+
+                    <!-- Dirección de facturación -->
+                    <div class="mb-3">
+                        <label for="direccionFacturacion" class="form-label">
+                            Dirección de Facturación <span class="text-danger">(Requerido)</span>
+                        </label>
+                        <input type="text" class="form-control" id="direccionFacturacion" placeholder="Ingresa tu dirección de facturación" required>
+                    </div>
+
+                    <!-- País -->
+                    <div class="mb-3">
+                        <label for="pais" class="form-label">
+                            País <span class="text-danger">(Requerido)</span>
+                        </label>
+                        <select class="form-select" id="pais" required>
+                            <option value="" selected disabled>Selecciona un país</option>
+                            <option value="mx">México</option>
+                            <option value="us">Estados Unidos</option>
+                            <option value="es">España</option>
+                            <option value="ar">Argentina</option>
+                            <option value="cl">Chile</option>
+                        </select>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Enviar Información</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pie de página -->
+    <footer>
+        <section class="footer">
+            <div><img src="../Tarjeta Bancaria/logo mytech.png" alt="Logo" class="footer-logo"></div>
+            <div class="contenedor-fotter-nav">
+                <a href="">Sobre nosotros</a>
+                <a href="">Contacto</a>
+                <a href="">FAQs</a>
+                <a href="">Soporte</a>
+                <a href="">Blog</a>
+            </div>
+            <div class="contenedor-fotter-pie">
+                <p>© 2024 Tech Store. Todos los derechos reservados.</p>
+            </div>
+        </section>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
