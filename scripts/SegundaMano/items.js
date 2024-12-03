@@ -1,6 +1,7 @@
-
 const itemsController = new ItemsControler(0);
-
+const itemsContainer = document.getElementById("list-items");
+const segundaMano=document.getElementById('segundaMano');
+const ofertas=document.getElementById('ofertas');
 
 function addItemCard(item){
     const quantity = item.quantity || 1;
@@ -10,8 +11,9 @@ function addItemCard(item){
         '    <div class="card-body">\n' +
         '        <h5 class="nameProduct text-center">'+item.name+'</h5>\n' +
         '        <p class="card-text text-center">'+item.descripcion+'</p>\n' +
+        '        <p class="card-text text-center">'+item.precio+'</p>\n' +
         '        <div class="botones text-center">\n' +
-        '        <a href="#" class="boton-nav boton-comprar">Agregar</a>\n' +
+        '        <a href="#" class="boton boton-rojo">Agregar</a>\n' +
         '           <button class="btn btn-dark minus" data-index="' + item.id + '">-</button>\n' +
         '            <span class="cantidad" id="quantity-'+ item.id +'">' + quantity + '</span>\n' +  
         '            <button class="btn btn-dark plus" data-index="' + item.id + '">+</button>\n' +
@@ -20,7 +22,7 @@ function addItemCard(item){
         '    </div>\n' +
         '</div>\n' +
         '<br/>';
-    const itemsContainer = document.getElementById("list-items");
+    // const itemsContainer = document.getElementById("list-items");borrar
     itemsContainer.innerHTML += itemHTML;
     // Evento de clic a los botones con la clase "plus". Es para el botón de +
     document.querySelectorAll('.plus').forEach(function(button) {
@@ -54,33 +56,34 @@ function loadStorageSampleData(){
     
     if(!localStorage.getItem("items")){
         
-        const sampleItems = [{'id':1, 'name':'SAMSUNG Galaxy S24',
+        const sampleItems = [
+            {'id':1, 'name':'SAMSUNG Galaxy S24',
         'img':'./assetsSegundaMano/Telefono1.png',
-        'descripcion':'Ultra, Gris, 12GB_512GB', 'quantity':1,},
+        'descripcion':'Ultra, Gris, 12GB_512GB','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
         {'id':2,'name':'Beats Solo 4',
         'img':'./assetsSegundaMano/Audifonos.png',
-        'descripcion':'On-Ear inalámbricos Bluetooths', 'quantity':1,},
+        'descripcion':'On-Ear inalámbricos Bluetooths','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
         {'id':3,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7','quantity':1,},
+            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'segundaMano','quantity':1,},
         {'id':4,'name':'Apple SmartWatch',
             'img':'./assetsSegundaMano/Smartwatch.png',
-            'descripcion':'Watch SE 2', 'quantity':1,},
+            'descripcion':'Watch SE 2','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
         {'id':5,'name':'SAMSUNG Galaxy S24',
             'img':'./assetsSegundaMano/Telefono1.png',
-            'descripcion':'Ultra, Gris, 12GB_512GB', 'quantity':1,},
+            'descripcion':'Ultra, Gris, 12GB_512GB','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
         {'id':6,'name':'Beats Solo 4',
             'img':'./assetsSegundaMano/Audifonos.png',
-            'descripcion':'On-Ear inalámbricos Bluetooth', 'quantity':1,},
+            'descripcion':'On-Ear inalámbricos Bluetooth','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
         {'id':7,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7', 'quantity':1,},
+            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'segundaMano','quantity':1,},
         {'id':8,'name':'Apple SmartWatch',
             'img':'./assetsSegundaMano/Smartwatch.png',
-            'descripcion':'Watch SE 2', 'quantity':1,},
+            'descripcion':'Watch SE 2','precio':'$10mxn','categoria':'ofertas','quantity':1,},
         {'id':9,'name':'Acer Laptop Gaming',
             'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7', 'quantity':1,},
+            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'ofertas','quantity':1,},
         ];
         localStorage.setItem("items", JSON.stringify(sampleItems));
     }
@@ -159,3 +162,15 @@ function decrementItem(itemId) {
     // Actualiza itemsController y localStorage
     localStorage.setItem("items", JSON.stringify(itemsController.items));
 }
+//filtro
+function filterCategory(e){
+    const categoria=e.target.id;//Que categoria es la que se selecciona
+    itemsContainer.innerHTML="";//vaciar cards
+    const products=itemsController.items.filter(i=> i.categoria == categoria);//filtar
+
+    products.forEach(item=>{//mostar cards filtradas
+        addItemCard(item);
+    });
+}
+segundaMano.addEventListener('click',filterCategory);
+ofertas.addEventListener('click',filterCategory);
