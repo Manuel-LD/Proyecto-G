@@ -314,20 +314,23 @@ p {
 
 #fotos {
     padding-top: 80px;
+    padding-bottom: 80px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
+    justify-content: center;
+    margin: 5px;
 }
 
 #fotos img {
     border-radius: 100%;
-    margin-top: 25px;
 }
 
 #fotos div {
     width: 200px;
+    margin: 10px;
 }
 
 .fotos-cont {
@@ -341,7 +344,7 @@ p {
 
 .trabajo {
     color: #b11b1b;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
 
 #team {
