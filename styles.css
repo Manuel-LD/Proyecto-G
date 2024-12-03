@@ -3,6 +3,16 @@ body{
 }
 
 /*Empieza estilos navbar*/
+
+#carrito{
+    padding: 8px 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #b11b1b;
+    text-decoration: none;
+}
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 0;
@@ -539,6 +549,8 @@ a{
     opacity: 50%;
 }
 
+
+
 /* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
     /*Footer*/
@@ -639,5 +651,43 @@ a{
     #more {
         padding: 20px;
     }
+    /*Cambios Alonso*/
+    .contenedor-contactanos{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .contenedor-carrito h1{
+        font-size: 2rem;
+        text-align: center ;
+    }
+    .total-carrito h3{
+        font-size: 1rem;
+    }
+
+    /*Terminan los cambios alonso*/
+    
 }
 
+
+
+/*CARRITO DE COMPRAS CSS PAGINA */
+
+.carrito{
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+}
+.contenedor-carrito{
+    padding: 20px;
+}
+.contenedor-carrito h1{
+    color: white;;
+}
+.total-carrito h3{
+    color: white;
+}
+
+
+/*TERMINA EL CSS DE CARRITO DE COMPRAS*/
