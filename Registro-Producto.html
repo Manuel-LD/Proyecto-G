@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registro de Productos</title>
+    <!--Bootstrap navbar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--Font Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!--Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Estilos css -->
+    <link rel="stylesheet" href="styles.css">
+    <!--EMAIL JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+     <!--Inicia navbar-->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="Pagina-inicio.html"><img src="Imagenes/logo mytech.PNG" class="img-navbar" alt="" /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pagina-inicio.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="segundaMano.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Inicio-sesion.html">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Más opciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Contacto.html">Contacto</a></li>
+                  <li><a class="dropdown-item" href="Acerca-de-nosotros.html">Nosotros</a></li>
+                  <li><a class="dropdown-item" href="Panel-usuario.html">Panel de usuario</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link boton boton-blanco" href="Registro-User.html">Unirse</a>
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link boton boton-rojo" href="segundaMano.html">Comprar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Termina navbar-->
+      <!--Empieza el form-->
+<div class="d-flex justify-content-center align-items-center vh-100 container-form container-registroproducto">
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-8">
+            <h2 class="my-5">Registro de Productos</h2>
+            <div class="row">
+                <div class="col">
+                
+                    <form id="newItemForm">
+                        <div class="form-group">
+                            <label for="newItemName" class="form-label">Nombre del Producto</label>
+                            <input type="text" class="form-control" id="newItemName">
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemDescription" class="form-label">Descripcion del Producto</label>
+                            <textarea type="text" class="form-control" id="newItemDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemStock" class="form-label">Stock</label>
+                            <input type="number" class="form-control" id="newItemStock"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemPrice" class="form-label">Precio</label>
+                            <input type="number" class="form-control" id="newItemPrice"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemImageUrl" class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="newItemImageUrl">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block boton boton-rojo">Guardar Producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Empieza el form-->
+    <footer class="contendor-fotter footer">
+        <div>
+          <a href="Pagina-inicio.html"><img src="./Imagenes/logo mytech.PNG" alt="Logo" class="footer-logo"></a>
+        </div>
+        <div class="contenedor-fotter-nav">
+            <nav>
+              <a href="Acerca-de-nosotros.html">Sobre nosotros</a>
+              <a href="Contacto.html">Contacto</a>
+                <a href="">FAQs</a>
+                <a href="">Soporte</a>
+                <a href="">Blog</a>
+            </nav>
+        </div>
+        <div class="contenedor-fotter-pie-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-x"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </footer>
+   <hr id="linea">
+    <div class="contenedor-fotter-pie">
+        <p>© 2024 Tech Store. All rights reserved. </p>
+    </div>   
+
+    
+    <script src="./validacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./itemsController.js"></script>
+    <script src="item-form.js"></script>
+</body>
+
+</html>x
