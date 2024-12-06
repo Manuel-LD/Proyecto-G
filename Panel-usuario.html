@@ -66,6 +66,83 @@
       </div>
     </div>
   </nav>
+  <!--Panel de usurio-->
+  <section class="panel-usuario ">
+    <div class="container pt-3  min-vh-100">
+      <div class="d-flex align-items-center p-3">
+        <i class="fa-regular fa-user fs-2" ></i>
+        <h1 class="fs-2 mb-0 ms-2">Cuenta de usuario</h1>
+    </div>  
+      <div class="row mb-3">
+          <div class="col-md-6">
+              <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" >
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="mb-3">
+                  <label for="apellido" class="form-label">Apellido:</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido" >
+              </div>
+          </div>
+      </div>
+      <div class="row mb-3">
+          <div class="col-md-6">
+              <div class="mb-3">
+                  <label for="email" class="form-label">Correo Electrónico:</label>
+                  <input type="email" class="form-control" name="email" id="email" >
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="mb-3">
+                  <label for="telefono" class="form-label">Teléfono Celular:</label>
+                  <input type="text" class="form-control" name="telefono" id="telefono" >
+              </div>
+          </div>
+           <div class="col-md-6">
+              <div class="mb-3">
+                  <label for="contraseña" class="form-label">Contraseña:</label>
+                  <input type="password" class="form-control"  name="contraseña" id="constraseña" >
+              </div>
+          </div>
+      </div>
+      <hr>
+      <div class="d-flex align-items-center p-3">
+        <i class="fa-regular fa-credit-card fs-1"></i>
+        <h1 class="fs-2 mb-0 ms-2">Método de pago</h1>
+    </div>    
+      <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="numero-tarjeta" class="form-label">Numero de Tarjeta:</label>
+                <input type="text" class="form-control" name="numero-tarjeta" id="numero-tarjeta" >
+            </div>
+        </div>
+        <div class="col-md-6">
+          <label for="numero-tarjeta" class="form-label">Mes y Año</label>
+          <div class="mb-3 d-flex">
+              <input type="number" class="form-control ms-2 mb-3" id="mes" placeholder="MM" >
+              <input type="number" class="form-control ms-2 mb-3" id="año" placeholder="YYYY" >
+          </div>
+      </div>
+      
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="titular" class="form-label">Titular de la tarje:</label>
+                <input type="text" class="form-control" name="titular" id="titular" >
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+              <label for="ccv" class="form-label">CCV</label>
+              <input type="text" class="form-control" name="ccv" id="ccv" >
+          </div>
+      </div>
+    </div>
+    <hr>
+    
+  </section>
   <!--Termina navbar-->
   <footer class="contendor-fotter footer">
     <div>
@@ -92,6 +169,7 @@
 <div class="contenedor-fotter-pie">
     <p>© 2024 Tech Store. All rights reserved. </p>
 </div>   
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

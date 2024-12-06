@@ -691,3 +691,11 @@ a{
 
 
 /*TERMINA EL CSS DE CARRITO DE COMPRAS*/
+
+
+.panel-usuario{
+    color: white;
+    width: 100%;
+    background: linear-gradient(to right, #B11B1B, #4B0B0B);
+}
+
