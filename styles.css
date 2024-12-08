@@ -31,17 +31,16 @@ body{
     color: white;
     border: 1px solid black;
 }
-.boton:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid #b11b1b;
-    cursor: pointer;
-}
 
 .boton-blanco {
     background-color: white;
     color: black;
     border: 1px solid #b11b1b;
+}
+
+.boton:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .img-navbar{
@@ -54,9 +53,6 @@ body{
 }
 
 /*Termina estilos navbar*/
-
-
-
 
 
 .inf-h3{
@@ -113,6 +109,38 @@ h2 {
 }
 
 /*Termina registro de usuario*/
+
+/*Productos*/
+/* Tarjetas de productos */
+.card {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Imagen circular dentro de la tarjeta */
+.card-img-top {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* Títulos y descripciones */
+.card-title {
+    color: #333333;
+}
+
+.card-text {
+    color: #555555; 
+}
+
+
+
 
 /*Inicio de sesion*/
 .contenedor {
@@ -210,7 +238,6 @@ h2 {
 }
 .contenedor-forms label {
     font-size: 14px;
-    font-family: 'Roboto';
 }
 .contenedor-forms input {
     margin-top: 10px;
@@ -474,7 +501,7 @@ a{
 /* Footer principal */
 .footer {
     display: flex;
-    height: 300px;
+    height: 150px;
     justify-content: center;
     align-items: center;
     width: 100%;
