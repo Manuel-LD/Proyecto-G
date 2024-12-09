@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envío de Paquete</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Inicia navbar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Pagina-inicio.html"><img src="Imagenes/logo mytech.PNG" class="img-navbar" alt="" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Pagina-inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="segundaMano.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Inicio-sesion.html">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Más opciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Contacto.html">Contacto</a></li>
+                  <li><a class="dropdown-item" href="Acerca-de-nosotros.html">Nosotros</a></li>
+                  <li><a class="dropdown-item" href="Panel-usuario.html">Panel de usuario</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link boton boton-blanco" href="Registro-User.html">Unirse</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link boton boton-rojo" href="segundaMano.html">Comprar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Termina navbar-->
+
+    <!-- Formulario de envío -->
+    <div class=" d-flex justify-content-center align-items-center vh-100 container-form">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-8">
+                <h2 class="text-center mb-4" style="color: white;">Formulario de Envío de Paquete</h2>
+                <form>
+                    <!-- Información del destinatario -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">
+                                Nombre <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apellido" class="form-label">
+                                Apellido <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Ingresa el apellido" required>
+                        </div>
+                    </div>
+
+                    <!-- Dirección de envío -->
+                    <div class="row mb-3">
+                        <div class="col-md-8">
+                            <label for="calle" class="form-label">
+                                Calle <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="calle" placeholder="Ingresa la calle" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="numero" class="form-label">
+                                Número <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="numero" placeholder="Número" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="ciudad" class="form-label">
+                                Ciudad <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="ciudad" placeholder="Ingresa la ciudad" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="estado" class="form-label">
+                                Estado <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="estado" placeholder="Ingresa el estado" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="codigoPostal" class="form-label">
+                                Código Postal <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="codigoPostal" placeholder="Ingresa el código postal" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pais" class="form-label">
+                                País <span class="text-danger">(Requerido)</span>
+                            </label>
+                            <input type="text" class="form-control" id="pais" placeholder="Ingresa el país" required>
+                        </div>
+                    </div>
+
+                  
+                    
+                    <!-- Botón de envío -->
+                    <div class="d-flex justify-content-center">
+                        <button href="../Tarjeta Bancaria/" class="boton boton-rojo ">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Aqui empieza el footer-->
+  <footer class="contendor-fotter footer">
+    <div>
+        <a href="Pagina-inicio.html"><img src="./Imagenes/logo mytech.PNG" alt="Logo" class="footer-logo"></a>
+    </div>
+    <div class="contenedor-fotter-nav">
+        <nav>
+          <a href="Acerca-de-nosotros.html">Sobre nosotros</a>
+          <a href="Contacto.html">Contacto</a>
+            <a href="">FAQs</a>
+            <a href="">Soporte</a>
+            <a href="">Blog</a>
+        </nav>
+    </div>
+    <div class="contenedor-fotter-pie-icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-solid fa-x"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<hr id="linea">
+<div class="contenedor-fotter-pie">
+    <p>© 2024 Tech Store. All rights reserved. </p>
+</div>  
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
