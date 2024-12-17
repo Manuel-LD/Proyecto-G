@@ -130,3 +130,48 @@ VALUES
 (5, 1, 250, 270, '2024-12-05', 5, 5, 5, 5);
 
 SELECT * FROM `order`;
+
+-- INNER JOIN: Obtener pedidos con detalles de los usuarios, productos y envíos.
+SELECT 
+    `order`.id_order,
+    user.first_name AS usuario,
+    user.last_name AS apellido,
+    products.description AS producto,
+    shipment.address AS direccion_envio,
+    shipment.status AS estado_envio,
+    `order`.total AS total_pedido
+FROM `order`
+INNER JOIN user ON `order`.user_id_user = user.id_user
+INNER JOIN products ON `order`.products_id_products = products.id_products
+INNER JOIN shipment ON `order`.shipment_id_shipment = shipment.id_shipment;
+
+-- LEFT JOIN: Mostrar todos los usuarios y, si tienen un pedido, incluir los detalles del mismo.
+SELECT 
+    user.id_user,
+    user.first_name,
+    user.last_name,
+    `order`.id_order,
+    `order`.total AS total_pedido
+FROM user
+LEFT JOIN `order` ON user.id_user = `order`.user_id_user;
+
+-- RIGHT JOIN: Mostrar todos los pedidos, incluso si no están relacionados con un usuario.
+SELECT 
+    `order`.id_order,
+    user.first_name AS usuario,
+    user.last_name AS apellido,
+    `order`.total AS total_pedido
+FROM `order`
+RIGHT JOIN user ON `order`.user_id_user = user.id_user;
+
+-- JOIN filtrado por un criterio específico: Buscar pedidos de usuarios que compraron productos con precio mayor a $500.
+SELECT 
+    `order`.id_order,
+    user.first_name AS usuario,
+    products.description AS producto,
+    products.price AS precio,
+    `order`.total AS total_pedido
+FROM `order`
+INNER JOIN user ON `order`.user_id_user = user.id_user
+INNER JOIN products ON `order`.products_id_products = products.id_products
+WHERE products.price > 500;
