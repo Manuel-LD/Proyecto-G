@@ -25,7 +25,7 @@ function getCardInfo(){
         "cvv" : cvv,
         "expirationDate" : expirationDate,
         "user":{
-            id_user:6
+            id_user:8
         }
     }
  
@@ -35,6 +35,4 @@ function getCardInfo(){
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     getCardInfo();
-});
- 
- 
+}); 
