@@ -1,176 +1,102 @@
-const itemsController = new ItemsControler(0);
-const itemsContainer = document.getElementById("list-items");
-const segundaMano=document.getElementById('segundaMano');
-const ofertas=document.getElementById('ofertas');
+// 1. Fetch the products from the API
+async function fetchProducts() {
+    try {
+        const response = await fetch('http://18.119.124.239:8080/api/products');
+        const data = await response.json();
+        renderProducts(data);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    }
+}
 
-function addItemCard(item){
-    const quantity = item.quantity || 1;
-    const itemHTML = '<div class="col margenbutton">'+
-         ' <div class="cardi" style="width: 18rem;">\n' +
-        '    <img src="'+item.img +'" class="img-fluid circleImg" width="300" height="250"  alt="product image">\n' +
-        '    <div class="card-body">\n' +
-        '        <h5 class="nameProduct text-center">'+item.name+'</h5>\n' +
-        '        <p class="card-text text-center">'+item.descripcion+'</p>\n' +
-        '        <p class="card-text text-center">'+item.precio+'</p>\n' +
-        '        <div class="botones text-center">\n' +
-        '        <a href="#" class="boton boton-rojo">Agregar</a>\n' +
-        '           <button class="btn btn-dark minus" data-index="' + item.id + '">-</button>\n' +
-        '            <span class="cantidad" id="quantity-'+ item.id +'">' + quantity + '</span>\n' +  
-        '            <button class="btn btn-dark plus" data-index="' + item.id + '">+</button>\n' +
-        '    </div>\n' +
-        '    </div>\n' +
-        '    </div>\n' +
-        '</div>\n' +
-        '<br/>';
-    // const itemsContainer = document.getElementById("list-items");borrar
-    itemsContainer.innerHTML += itemHTML;
-    // Evento de clic a los botones con la clase "plus". Es para el botón de +
-    document.querySelectorAll('.plus').forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            //Se obtiene valor de data-index del botón clickeado
-            const dataIndex = event.target.getAttribute('data-index');
-            
-            // Muestra el valor de data-index en la consola
-            console.log('El valor de data-index es:', dataIndex);
+// 2. Render products on the page
+function renderProducts(products) {
+    const root = document.getElementById('root');
+    root.innerHTML = products.map((product, i) => {
+        const { url_image, description, price, id_products } = product;
+        return `
+            <div class='box'>
+                <div class='img-box'>
+                    <img class='images' src="${url_image}" alt="${description}">
+                </div>
+                <div class='bottom'>
+                    <p>${description}</p>
+                    <h2>$${price}.00</h2>
+                    <button onclick="addToCart(${i}, ${id_products}, '${description}', '${url_image}', ${price}, 1)">Add 1 to cart</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// 3. Add product to the cart with a specific quantity
+let cart = [];
+
+function addToCart(index, id, description, image, price, quantity) {
+    // Check if the product is already in the cart
+    const productIndex = cart.findIndex(item => item.id === id);
     
-            //Se manda llamar la función de incremento.
-            incrementItem(dataIndex);
-        });
-        
-    }); 
-    
-    // Evento de clic a todos los botones con la clase "minus". Es para el botón de -
-    document.querySelectorAll('.minus').forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            // Se obtiene el valor de data-index del botón clickeado
-            const dataIndex = event.target.getAttribute('data-index');
-            
-            //Se manda llamar la función de decremento.
-            decrementItem(dataIndex);
-        });
-        
-    });
+    if (productIndex !== -1) {
+        // If the product is already in the cart, just update the quantity
+        cart[productIndex].quantity += quantity;
+    } else {
+        // If the product is not in the cart, add it with the specified quantity
+        const product = { id, description, image, price, quantity };
+        cart.push(product);
+    }
+
+    displayCart();
+    saveCartToLocalStorage(); // Guardamos el carrito en localStorage
 }
 
-function loadStorageSampleData(){
-    
-    if(!localStorage.getItem("items")){
-        
-        const sampleItems = [
-            {'id':1, 'name':'SAMSUNG Galaxy S24',
-        'img':'./assetsSegundaMano/Telefono1.png',
-        'descripcion':'Ultra, Gris, 12GB_512GB','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
-        {'id':2,'name':'Beats Solo 4',
-        'img':'./assetsSegundaMano/Audifonos.png',
-        'descripcion':'On-Ear inalámbricos Bluetooths','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
-        {'id':3,'name':'Acer Laptop Gaming',
-            'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'segundaMano','quantity':1,},
-        {'id':4,'name':'Apple SmartWatch',
-            'img':'./assetsSegundaMano/Smartwatch.png',
-            'descripcion':'Watch SE 2','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
-        {'id':5,'name':'SAMSUNG Galaxy S24',
-            'img':'./assetsSegundaMano/Telefono1.png',
-            'descripcion':'Ultra, Gris, 12GB_512GB','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
-        {'id':6,'name':'Beats Solo 4',
-            'img':'./assetsSegundaMano/Audifonos.png',
-            'descripcion':'On-Ear inalámbricos Bluetooth','precio':'$10mxn','categoria':'segundaMano', 'quantity':1,},
-        {'id':7,'name':'Acer Laptop Gaming',
-            'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'segundaMano','quantity':1,},
-        {'id':8,'name':'Apple SmartWatch',
-            'img':'./assetsSegundaMano/Smartwatch.png',
-            'descripcion':'Watch SE 2','precio':'$10mxn','categoria':'ofertas','quantity':1,},
-        {'id':9,'name':'Acer Laptop Gaming',
-            'img':'./assetsSegundaMano/Computadoras1.png',
-            'descripcion':'Nitro V5 Core i7','precio':'$10mxn','categoria':'ofertas','quantity':1,},
-        ];
-        localStorage.setItem("items", JSON.stringify(sampleItems));
+// 4. Remove item from cart
+function removeItemFromCart(index) {
+    cart.splice(index, 1);
+    displayCart();
+    saveCartToLocalStorage(); // Guardamos el carrito en localStorage
+}
+
+// 5. Display cart items with quantities
+function displayCart() {
+    const cartItemContainer = document.getElementById('cartItem');
+    const countElement = document.getElementById('count');
+    const totalElement = document.getElementById('total');
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartItemContainer.innerHTML = "Your cart is empty";
+        totalElement.innerHTML = "$0.00";
+        countElement.innerHTML = "0";
+    } else {
+        cartItemContainer.innerHTML = cart.map((item, i) => {
+            const { description, image, price, quantity } = item;
+            total += price * quantity;  // Multiplicamos por la cantidad
+            totalElement.innerHTML = `$${total}.00`;
+            return `
+                <div class='cart-item'>
+                    <div class='row-img'>
+                        <img class='rowimg' src="${image}" alt="${description}">
+                    </div>
+                    <p style='font-size:12px;'>${description}</p>
+                    <h2 style='font-size: 15px;'>$${price}.00 x ${quantity}</h2>
+                    <i class='fa-solid fa-trash' onclick='removeItemFromCart(${i})'></i>
+                </div>
+            `;
+        }).join('');
+        countElement.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);  // Contamos las unidades
     }
 }
 
-function loadCardsListFromItemsController(){
-    for(var i = 0, size = itemsController.items.length; i < size ; i++){
-        const item = itemsController.items[i];
-        addItemCard(item);
-    }
+// 6. Save the cart to localStorage
+function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart)); // Guardamos el carrito en localStorage
 }
-//invocar funciones
-loadStorageSampleData();
-itemsController.loadItemsFromLocalStorage();//en itemscontroler
-loadCardsListFromItemsController();
 
-//Funcion de incremento
-function incrementItem(itemId) {
-   
-    // Encuentra el producto en el array de itemsController 
-    let item= null;
-    for(let i=0; i < itemsController.items.length; i++ ){
-        if(itemsController.items[i].id==itemId){
-            console.log(itemsController.items[i])
-            item=itemsController.items[i];
-            
-        }
-    }
-
-    if (item) {
-        // Incrementa la cantidad del producto
-        if (item.quantity) {
-            item.quantity += 1;
-          } else {
-            item.quantity = 1;
-          }
-
-        // Actualiza la cantidad en el DOM
-        const quantityElement = document.getElementById('quantity-' + itemId);
-        if (quantityElement) { //Verifica si quantityElement no es null (si se encontró un elemento con ese id en el DOM).
-            quantityElement.textContent = item.quantity; //Se cambia el contenido del elemento quantityElement para que muestre el valor de item.quantity.
-        }
-
-        console.log('Cantidad de ' + item.name + ' incrementada a ' + item.quantity);
-   }
-    // Actualiza itemsController y localStorage
-   localStorage.setItem("items", JSON.stringify(itemsController.items));
-   
+// 7. Proceed to the order page
+function proceedToOrder() {
+    window.location.href = "order.html"; // Redirigimos a la página de la orden
 }
-//Funcion de decrremento
-function decrementItem(itemId) {
-    // Encuentra el producto en el array de itemsController
-    let item= null;
-    for(let i=0; i < itemsController.items.length; i++ ){
-        if(itemsController.items[i].id==itemId){
-            console.log(itemsController.items[i])
-            item=itemsController.items[i];
-            
-        }
-    }
 
-        // La primera parte de la condición (item) verifica si el producto ha sido encontrado en el array. 
-        //(item.quantity > 1) asegura que la cantidad del producto sea mayor a 1. Si la cantidad es 1 o menos, la resta.
-    if (item && item.quantity > 1) {
-        // Decrementa la cantidad del producto
-        item.quantity -= 1;
+// 8. Initialize the page by fetching the products
+fetchProducts();
 
-        // Actualiza la cantidad en el DOM
-        const quantityElement = document.getElementById('quantity-' + itemId);//Busca un elemento en la página cuyo atributo id coincida con el valor.
-        if (quantityElement) { // Para verificar si el elemento con el id quantity-{itemId} fue encontrado en el DOM.
-            quantityElement.textContent = item.quantity;// Actualiza el contenido del elemento HTML para reflejar la cantidad actual del producto.
-        }
-
-        console.log('Cantidad de ' + item.name + ' decrementada a ' + item.quantity);
-    }
-    // Actualiza itemsController y localStorage
-    localStorage.setItem("items", JSON.stringify(itemsController.items));
-}
-//filtro
-function filterCategory(e){
-    const categoria=e.target.id;//Que categoria es la que se selecciona
-    itemsContainer.innerHTML="";//vaciar cards
-    const products=itemsController.items.filter(i=> i.categoria == categoria);//filtar
-
-    products.forEach(item=>{//mostar cards filtradas
-        addItemCard(item);
-    });
-}
-segundaMano.addEventListener('click',filterCategory);
-ofertas.addEventListener('click',filterCategory);
