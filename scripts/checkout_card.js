@@ -25,7 +25,7 @@ function getCardInfo(){
         "cvv" : cvv,
         "expirationDate" : expirationDate,
         "user":{
-            id_user:1
+            id_user:7
         }
     }
  
