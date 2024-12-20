@@ -8,7 +8,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     const apellido = document.getElementById('apellido').value.trim();
     const email = document.getElementById('email').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
+    const comment = document.getElementById('mensaje').value.trim();//se queda
     const terminos = document.getElementById('terminos').checked;  
 
     // Validar los campos
@@ -37,21 +37,25 @@ document.getElementById('formulario').addEventListener('submit', function(event)
         alert('Por favor, ingrese un número de teléfono válido.');
         return;
     }
-    if (!mensaje) {
-        alert('Por favor, ingrese un mensaje.');
+    if (!comment) {
+        alert('Por favor, ingrese un comment.');
         return;
     }
     
 
     // Si todo es válido, enviar los datos
     const formData = {
-        nombre,
-        apellido,
-        email,
-        telefono,
-        mensaje
+        // nombre,
+        // apellido,
+        // email,
+        // telefono,
+        comment,
+        user:{
+            id_user:1
+        }
     };
     enviarCorreo(formData);
+    enviarDatosAPI(formData);
 });
 
 function enviarCorreo(data) {
@@ -61,20 +65,31 @@ function enviarCorreo(data) {
         from_lastname: data.apellido,
         from_email: data.email,
         from_phone: data.telefono,
-        message: data.mensaje
+        message: data.comment
     }).then(function(response) {
         console.log('Correo enviado con éxito:', response);
-        alert('Gracias por tu mensaje. Hemos recibido tu información.');
+        alert('Gracias por tu comment. Hemos recibido tu información.');
         
         // Limpiar los campos del formulario
         document.getElementById('nombre').value = '';
         document.getElementById('apellido').value = '';
         document.getElementById('email').value = '';
         document.getElementById('telefono').value = '';
-        document.getElementById('mensaje').value = '';
+        document.getElementById('comment').value = '';
         document.getElementById('terminos').checked = false;
     }, function(error) {
         console.log('Error al enviar el correo:', error);
         alert('Hubo un problema al enviar el correo. Intenta nuevamente.');
     });
+}
+// datos mandados con la solicutud POST
+function enviarDatosAPI(data){
+    fetch('http://18.119.124.239:8080/api/messages', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+      })
+      .then(response => response.json()) 
+      .then(json => console.log("Datos enviados correctamente", json))
+      .catch(err => console.log("Error al enviar datos",err));
 }
