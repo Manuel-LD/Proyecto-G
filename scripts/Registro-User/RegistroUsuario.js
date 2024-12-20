@@ -71,21 +71,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return isValid;
     };
+    //base de datos
+    const saveUserToDatabase = async (user) => {
+        const url = "http://18.119.124.239:8080/api/users";
 
-    form.addEventListener("submit", (event) => {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user),
+            });
+
+            if (response.ok) {
+                console.log("Usuario guardado en la base de datos.");
+            } else {
+                const error = await response.json();
+                console.error("Error al guardar el usuario:", error);
+                showAlert("Error al guardar el usuario en la base de datos.", "danger");
+            }
+        } catch (error) {
+            console.error("Error en la conexión:", error);
+            showAlert("Error de conexión con la base de datos.", "danger");
+        }
+    };
+
+    form.addEventListener("submit",async (event) => {
         event.preventDefault(); // Evita el envío del formulario por defecto
         const registeredUsers=JSON.parse(localStorage.getItem('users')) || [];//si no existe datos en el json regresa un []
         const isUserRegistered=registeredUsers.find( user => user.email === emailInput.value)
         if(isUserRegistered && validateForm()){
             return alert('El usuario ya esta registrado');
         }
-        registeredUsers.push(
-            {name:nombreInput.value,
-             apellido:apellidoInput.value,
-             email:btoa(emailInput.value), //btoa para encriptar
-             telefono:telefonoInput.value,
-             contrasena:btoa(contrasenaInput.value), //btoa para encriptar, tambien agregué value
-            })
+        const newUser = {
+            first_name: nombreInput.value,
+            last_name: apellidoInput.value,
+            address:'veracruz',
+            email: btoa(emailInput.value), // Encriptar con btoa
+            phone_number: telefonoInput.value,
+            // contrasena: btoa(contrasenaInput.value), // Encriptar contraseña
+            rol:'vendedor'
+        };
+        registeredUsers.push(newUser)
+            // Guardar en la base de datos
+        await saveUserToDatabase(newUser);
 
         localStorage.setItem('users',JSON.stringify(registeredUsers));
         // Mostrar mensaje de éxito si la validación es exitosa
