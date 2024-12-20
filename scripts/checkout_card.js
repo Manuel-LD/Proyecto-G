@@ -4,7 +4,7 @@ const cvv = document.getElementById('cvv').value;
 const expirationDate = document.getElementById('fechaVencimiento').value;
 const form = document.querySelector("form");
  
- 
+
 //agregar datos bancarios con POST
 function addDataAPI(data){
     fetch('http://18.119.124.239:8080/api/cards', {
@@ -16,7 +16,7 @@ function addDataAPI(data){
     .then(json => console.log("Datos enviados correctamente", json))
     .catch(err=> console.log("Error al enviar datos", err));
     alert(data);
-};
+}; 
  
  
 function getCardInfo(){
@@ -25,7 +25,7 @@ function getCardInfo(){
         "cvv" : cvv,
         "expirationDate" : expirationDate,
         "user":{
-            id_user:7
+            id_user:6
         }
     }
  
