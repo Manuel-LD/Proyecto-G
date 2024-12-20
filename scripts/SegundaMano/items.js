@@ -1,9 +1,63 @@
+//btns
+const btnColorNegro = document.getElementById('btnNegro');
+const btnColorBlanco = document.getElementById('btnBlanco');
+const btnSegundaMano = document.getElementById('segundaMano');
+const btnTodos = document.getElementById('btnTodos');
+
+
+function clearCards() {
+    const root = document.getElementById('root');
+    root.innerHTML = ''; // Limpia el contenedor de tarjetas
+}
+
+// Evento para filtrar items usados
+btnColorNegro.addEventListener('click', async function () {
+    const items = await fetchProducts(); // Espera a que se resuelva la promesa
+    const selectedItems = items.filter(item => item.color === 'Negro');
+
+    clearCards();
+    renderProducts(selectedItems);
+});
+
+
+btnColorBlanco.addEventListener('click', async function () {
+    const items = await fetchProducts(); // Espera a que se resuelva la promesa
+    const selectedItems = items.filter(item => item.color === 'Blanco');
+
+    clearCards();
+    renderProducts(selectedItems);
+});
+
+// Evento para filtrar items usados
+btnSegundaMano.addEventListener('click', async function () {
+    const items = await fetchProducts(); // Espera a que se resuelva la promesa
+    const selectedItems = items.filter(item => item.condition === 'Usado');
+
+    clearCards();
+    renderProducts(selectedItems);
+});
+
+// Evento para cargar todos los items
+btnTodos.addEventListener('click', async function () {
+    const items = await fetchProducts();// Espera a que se resuelva la promesa
+
+    clearCards();
+    renderProducts(items);
+});
+
+async function showProducts() {
+    const items = await fetchProducts();
+    renderProducts(items);
+}
+
+showProducts();
+
 // 1. Fetch the products from the API
 async function fetchProducts() {
     try {
         const response = await fetch('http://18.119.124.239:8080/api/products');
         const data = await response.json();
-        renderProducts(data);
+        return (data);
     } catch (error) {
         console.error('Error fetching products:', error);
     }
@@ -22,7 +76,7 @@ function renderProducts(products) {
                 <div class='bottom'>
                     <p>${description}</p>
                     <h2>$${price}.00</h2>
-                    <button onclick="addToCart(${i}, ${id_products}, '${description}', '${url_image}', ${price}, 1)">Add 1 to cart</button>
+                    <button onclick="addToCart(${i}, ${id_products}, '${description}', '${url_image}', ${price}, 1)">Agregar al carrito</button>
                 </div>
             </div>
         `;
@@ -35,7 +89,7 @@ let cart = [];
 function addToCart(index, id, description, image, price, quantity) {
     // Check if the product is already in the cart
     const productIndex = cart.findIndex(item => item.id === id);
-    
+
     if (productIndex !== -1) {
         // If the product is already in the cart, just update the quantity
         cart[productIndex].quantity += quantity;
@@ -64,7 +118,7 @@ function displayCart() {
     let total = 0;
 
     if (cart.length === 0) {
-        cartItemContainer.innerHTML = "Your cart is empty";
+        cartItemContainer.innerHTML = "Tu carrito está vacío";
         totalElement.innerHTML = "$0.00";
         countElement.innerHTML = "0";
     } else {
@@ -94,7 +148,7 @@ function saveCartToLocalStorage() {
 
 // 7. Proceed to the order page
 function proceedToOrder() {
-    window.location.href = "order.html"; // Redirigimos a la página de la orden
+    window.location.href = "order.html"; // Redirigimos a la pÃ¡gina de la orden
 }
 
 // 8. Initialize the page by fetching the products
